@@ -1,0 +1,26 @@
+{
+  "manual": {
+    "persona_count": 4,
+    "requirements_count": 8,
+    "tests_count": 8,
+    "review_coverage": 0.63,
+    "traceability_ratio": 0.87,
+    "testability_rate": 0.75
+  },
+  "automated": {
+    "persona_count": 5,
+    "requirements_count": 9,
+    "tests_count": 9,
+    "review_coverage": 0.71,
+    "traceability_ratio": 0.78,
+    "testability_rate": 0.81
+  },
+  "hybrid": {
+    "persona_count": 4,
+    "requirements_count": 8,
+    "tests_count": 9,
+    "review_coverage": 0.67,
+    "traceability_ratio": 0.88,
+    "testability_rate": 0.87
+  }
+}

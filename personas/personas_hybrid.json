@@ -1,0 +1,31 @@
+{
+  "personas": [
+    {
+      "id": "P_hybrid_1",
+      "name": "Frequent Fitness Logger",
+      "description": "A user who depends on the app for regular workout tracking and expects logging to work reliably during or immediately after exercise.",
+      "derived_from_group": "H1",
+      "goals": [
+        "Log workouts quickly",
+        "Track activities without interruption"
+      ],
+      "pain_points": [
+        "The app crashes while saving workouts",
+        "Previously entered activity data may disappear"
+      ],
+      "context": [
+        "Using the app during exercise sessions",
+        "Using the app outdoors or while moving"
+      ],
+      "constraints": [
+        "Workout logging must complete without crashing",
+        "Saved workout data must persist"
+      ],
+      "evidence_reviews": [
+        "rev_12",
+        "rev_41"
+      ],
+      "notes": "Refined the persona description and removed an unsupported assumption about synchronization."
+    }
+  ]
+}

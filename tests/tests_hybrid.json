@@ -1,0 +1,16 @@
+{
+  "tests": [
+    {
+      "test_id": "T_hybrid_1",
+      "requirement_id": "FR_hybrid_1",
+      "scenario": "Save a workout entry without crashing",
+      "steps": [
+        "Open the workout logging feature",
+        "Enter workout information",
+        "Submit the workout"
+      ],
+      "expected_result": "The workout is saved successfully and the application does not crash.",
+      "notes": "Revised the expected result to match the updated hybrid requirement."
+    }
+  ]
+}
