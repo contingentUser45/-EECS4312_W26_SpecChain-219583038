@@ -1,16 +1,249 @@
-
 {
   "tests": [
     {
       "test_id": "T_auto_1",
       "requirement_id": "FR1",
-      "scenario": "Workout Logging Stability",
+      "scenario": "Trial option visible at subscription prompt",
       "steps": [
-        "Open the workout logging screen",
-        "Enter workout details",
-        "Submit the workout"
+        "Open app as a new unauthenticated user",
+        "Tap any premium content item",
+        "Observe the subscription prompt"
       ],
-      "expected_result": "The workout is saved successfully and the application remains stable."
+      "expected_result": "A free or discounted trial option is visible without requiring payment details."
+    },
+    {
+      "test_id": "T_auto_2",
+      "requirement_id": "FR1",
+      "scenario": "Premium content accessible after trial activation",
+      "steps": [
+        "Activate the free trial from the subscription prompt",
+        "Browse the content library"
+      ],
+      "expected_result": "At least one previously locked premium item is now playable."
+    },
+    {
+      "test_id": "T_auto_3",
+      "requirement_id": "FR2",
+      "scenario": "Short session content visible on home screen",
+      "steps": [
+        "Log in and navigate to the home screen",
+        "Check for content items labelled 5 minutes or under"
+      ],
+      "expected_result": "At least one item of 5 minutes or fewer is visible without scrolling."
+    },
+    {
+      "test_id": "T_auto_4",
+      "requirement_id": "FR2",
+      "scenario": "Short session plays without leaving home screen",
+      "steps": [
+        "Log in and navigate to the home screen",
+        "Tap a short session item"
+      ],
+      "expected_result": "Playback starts inline or as an overlay without navigating away from the home screen."
+    },
+    {
+      "test_id": "T_auto_5",
+      "requirement_id": "FR3",
+      "scenario": "Keyword search returns relevant results within 2 seconds",
+      "steps": [
+        "Tap the search bar",
+        "Enter 'rain sounds' and submit",
+        "Start a timer on submission"
+      ],
+      "expected_result": "Results appear within 2 seconds and at least one top-5 result matches the query."
+    },
+    {
+      "test_id": "T_auto_6",
+      "requirement_id": "FR3",
+      "scenario": "Natural language search returns relevant results",
+      "steps": [
+        "Tap the search bar",
+        "Enter 'help me calm down when anxious' and submit",
+        "Review the top 5 results"
+      ],
+      "expected_result": "At least one result is a breathing exercise or anxiety relief content item."
+    },
+    {
+      "test_id": "T_auto_7",
+      "requirement_id": "FR4",
+      "scenario": "Recently Played section visible on home screen",
+      "steps": [
+        "Log in as a returning user with prior playback history",
+        "Navigate to the home screen"
+      ],
+      "expected_result": "A Recently Played section is visible above the fold with at least one item."
+    },
+    {
+      "test_id": "T_auto_8",
+      "requirement_id": "FR4",
+      "scenario": "Previously played content starts within 3 taps",
+      "steps": [
+        "Log in and go to the home screen",
+        "Tap the most recent item in Recently Played",
+        "Count taps to playback start"
+      ],
+      "expected_result": "Playback begins in 3 taps or fewer with no upsell or loading gate in between."
+    },
+    {
+      "test_id": "T_auto_9",
+      "requirement_id": "FR5",
+      "scenario": "Premium content preview shown without account creation",
+      "steps": [
+        "Open app without logging in",
+        "Tap a premium content item"
+      ],
+      "expected_result": "Title, description, and a preview are shown with no registration wall triggered."
+    },
+    {
+      "test_id": "T_auto_10",
+      "requirement_id": "FR5",
+      "scenario": "No registration wall before preview on multiple items",
+      "steps": [
+        "Open app unauthenticated",
+        "Tap 5 different premium items in sequence"
+      ],
+      "expected_result": "Title and description load for all 5 items before any login prompt appears."
+    },
+    {
+      "test_id": "T_auto_11",
+      "requirement_id": "FR6",
+      "scenario": "5 free items playable without an account",
+      "steps": [
+        "Open app and decline account creation",
+        "Play 5 distinct free content items"
+      ],
+      "expected_result": "All 5 items play to completion with no registration prompt."
+    },
+    {
+      "test_id": "T_auto_12",
+      "requirement_id": "FR6",
+      "scenario": "No registration prompt interrupts free content playback",
+      "steps": [
+        "Open app unauthenticated",
+        "Play a free content item to completion"
+      ],
+      "expected_result": "No login modal or account creation prompt appears during playback."
+    },
+    {
+      "test_id": "T_auto_13",
+      "requirement_id": "FR7",
+      "scenario": "No ads shown during premium subscriber session",
+      "steps": [
+        "Log in as an active premium subscriber",
+        "Navigate 5 screens and play 3 content items in full"
+      ],
+      "expected_result": "Zero banner, interstitial, or audio ads appear throughout the session."
+    },
+    {
+      "test_id": "T_auto_14",
+      "requirement_id": "FR7",
+      "scenario": "No ads shown for premium subscriber on tablet",
+      "steps": [
+        "Log in as an active premium subscriber on a tablet",
+        "Navigate and play content for a full session"
+      ],
+      "expected_result": "No ads of any kind are displayed on the tablet device."
+    },
+    {
+      "test_id": "T_auto_15",
+      "requirement_id": "FR8",
+      "scenario": "App layout renders correctly on tablet",
+      "steps": [
+        "Launch the app on a supported tablet",
+        "Navigate the home screen, library, and a content detail page"
+      ],
+      "expected_result": "No overlapping, clipped, or misaligned UI elements on any screen."
+    },
+    {
+      "test_id": "T_auto_16",
+      "requirement_id": "FR8",
+      "scenario": "Playback stable across 20 consecutive sessions on tablet",
+      "steps": [
+        "Launch the app on a supported tablet",
+        "Play a content item to completion 20 times consecutively"
+      ],
+      "expected_result": "All 20 sessions complete without a crash or freeze."
+    },
+    {
+      "test_id": "T_auto_17",
+      "requirement_id": "FR9",
+      "scenario": "Human-readable error shown on update-related launch failure",
+      "steps": [
+        "Simulate a post-update launch failure in a test environment",
+        "Attempt to launch the app"
+      ],
+      "expected_result": "A clear error message is shown instead of a blank or frozen screen."
+    },
+    {
+      "test_id": "T_auto_18",
+      "requirement_id": "FR9",
+      "scenario": "Recovery action offered after launch failure",
+      "steps": [
+        "Simulate a post-update launch failure",
+        "Observe the error screen"
+      ],
+      "expected_result": "At least one actionable recovery option (e.g. Repair, Clear Cache) is displayed."
+    },
+    {
+      "test_id": "T_auto_19",
+      "requirement_id": "FR10",
+      "scenario": "Billing dispute receives first response within 24 hours",
+      "steps": [
+        "Submit a billing dispute via in-app support and record the timestamp",
+        "Monitor for a support response"
+      ],
+      "expected_result": "A substantive response is received within 24 hours of submission."
+    },
+    {
+      "test_id": "T_auto_20",
+      "requirement_id": "FR10",
+      "scenario": "Follow-up contact requires no repeated information",
+      "steps": [
+        "Submit a billing dispute with full details",
+        "Send a follow-up message referencing the same issue"
+      ],
+      "expected_result": "Support does not request information already provided in the original submission."
+    },
+    {
+      "test_id": "T_auto_21",
+      "requirement_id": "FR11",
+      "scenario": "Billing history shows all required charge fields",
+      "steps": [
+        "Log in as a user with at least 3 historical charges",
+        "Navigate to billing settings and open billing history"
+      ],
+      "expected_result": "Each entry shows date, amount, currency, and plan name for all charges in the past 24 months."
+    },
+    {
+      "test_id": "T_auto_22",
+      "requirement_id": "FR11",
+      "scenario": "Billing history reachable within 3 taps",
+      "steps": [
+        "Log in and go to account home",
+        "Navigate to billing history and count taps"
+      ],
+      "expected_result": "Billing history is reached in 3 taps or fewer with no interstitials."
+    },
+    {
+      "test_id": "T_auto_23",
+      "requirement_id": "FR12",
+      "scenario": "Cancel and refund options accessible without contacting support",
+      "steps": [
+        "Log in as an active subscriber",
+        "Open account settings and locate cancellation and refund options"
+      ],
+      "expected_result": "Both options are usable without opening a support chat or external page."
+    },
+    {
+      "test_id": "T_auto_24",
+      "requirement_id": "FR12",
+      "scenario": "Cancellation produces confirmation and email within 5 minutes",
+      "steps": [
+        "Log in as an active subscriber",
+        "Complete the self-service cancellation flow",
+        "Check for on-screen confirmation and monitor email"
+      ],
+      "expected_result": "On-screen confirmation appears immediately and a confirmation email arrives within 5 minutes."
     }
   ]
 }

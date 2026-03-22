@@ -1,12 +1,83 @@
 {
   "groups": [
     {
-      "group_id": "A1",
-      "theme": "Workout logging issues",
-      "review_ids": ["rev_12", "rev_33", "rev_41", "rev_92"],
-      "example_reviews": [
-        "The app crashes whenever I try to log a run.",
-        "Logging workouts causes the app to freeze."
+      "group_id": "G1",
+      "theme": "Auto-generated group",
+      "review_ids": [
+        "3ce20d7e-0688-4f85-9300-2a3a213c6285",
+        "43423521-78f1-477e-ad92-765a4d30c7ae",
+        "f4bf3503-5d80-4a1f-b43a-7699d42f4815",
+        "7ecc8d99-9f1d-4db8-b4d6-92f10834b96a",
+        "c54620b7-3c3c-4ec7-9ed6-f47707389137",
+        "75dd9e72-a6d4-4022-8226-e7707ead5417",
+        "b329e371-4f27-47de-9f40-390de138149b",
+        "fcbdbfbc-f272-42b3-bb67-d5171231ac25",
+        "b1882e5d-7fd3-4689-b63c-7afe88fc2577",
+        "74b5513d-d6ca-47cd-9cb6-8b25ffde36ac"
+      ]
+    },
+    {
+      "group_id": "G2",
+      "theme": "Auto-generated group",
+      "review_ids": [
+        "70227267-5ff8-45aa-9c95-2d37f033f71e",
+        "7f042d02-d7ef-4e97-bcbc-05cd5edeedce",
+        "5cd69edb-ef57-4e2b-9328-20853209c75f",
+        "7be7ef09-5ce9-440f-bd4f-37a92061a2b3",
+        "a383b6fc-1ee9-473c-aad8-ec6cb1731fd0",
+        "de3dfa4b-cae0-47be-ae11-b5be19b41ef0",
+        "d152d57e-1504-4142-9802-c505c7918e52",
+        "5c34152c-1c81-4a5d-b54b-dcc567496da0",
+        "603e47d7-f91e-4888-a20b-5d5d542b7490",
+        "c5dd92cc-462c-47bf-b84a-da6963cce373"
+      ]
+    },
+    {
+      "group_id": "G3",
+      "theme": "Auto-generated group",
+      "review_ids": [
+        "9e82ae1f-0a25-4af8-a66c-c3f758ef36f0",
+        "d5d011bf-4303-4039-82d8-6bdf251d7d99",
+        "0dd6d7a3-0441-4def-930f-356d7362c2da",
+        "e1c0b453-cb2a-4ed1-acce-5588d203eff0",
+        "ee51cdc6-6c8b-462e-b441-5c9472f64236",
+        "69b98f2b-cf03-430a-98ac-a814a6c2c8e6",
+        "5632e8dd-de5b-403c-a6ad-043002dab473",
+        "b0cdef7b-2cb2-4144-acf5-edfe39dd9935",
+        "6b3e80f8-6d10-4bf0-a101-61748642f65c",
+        "ce482117-9254-438e-9e71-d2c8cce6a166"
+      ]
+    },
+    {
+      "group_id": "G4",
+      "theme": "Auto-generated group",
+      "review_ids": [
+        "6829d6ae-3cfb-43f1-a5ed-06b74f574922",
+        "b7b5d699-0133-4c84-974d-10c497bfe282",
+        "20a56cde-ed7b-4a4f-a97f-963df8f026cf",
+        "36bb3344-963e-4cb3-b384-a5338b1e7846",
+        "08e55992-d7ce-4184-ab0b-4bdaad30d213",
+        "c50b0819-5822-46be-b585-c9281d5ee49e",
+        "5970dfe3-7ca0-454a-99f8-9b2c2c1699be",
+        "5fdd67ed-deab-4ef0-a7fe-7febd6eef2fa",
+        "a4f89e57-6189-4a8a-982b-816f9a017947",
+        "4c50af9f-c7fa-4d42-a8eb-a145f29f0092"
+      ]
+    },
+    {
+      "group_id": "G5",
+      "theme": "Auto-generated group",
+      "review_ids": [
+        "945626ae-6345-4a43-8af8-2ee723c0ac9e",
+        "1f4bf5f1-2dfc-4d62-a311-2bc3deff3cb3",
+        "e662688d-201f-42f3-8a02-bd4c35f5302c",
+        "b8a673bc-92b0-4969-9277-30b40d2991b5",
+        "ba50fa1f-f26b-4a5f-aa5c-f31c4969ef0a",
+        "3af0aee8-6d17-4058-8c89-61b64288e59d",
+        "991e6e4a-5850-4085-97e0-d8326aafc582",
+        "9aaf01b1-458b-4bb5-9c65-0e20fc5d207e",
+        "88e2b4e3-0040-474b-986b-4a68fbb2659a",
+        "43bf65db-045c-4cd9-9741-5204b30edd39"
       ]
     }
   ]

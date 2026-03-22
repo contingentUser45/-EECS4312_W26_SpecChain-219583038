@@ -1,22 +1,152 @@
-{  "personas": [
+{
+  "personas": [
     {
       "id": "P1",
-      "name": "Frequent Activity Tracker",
-      "description": "A user who relies on the app to log workouts frequently and expects stable performance.",
+      "name": "Average Guy needing Stress Relief",
+      "description": "Working adult using the app to wind down and sleep better. Converted by a discount trial and now a daily user.",
       "derived_from_group": "G1",
       "goals": [
-        "Track workouts consistently",
-        "Log activity quickly"      ],
+        "Release daily stress quickly in short sessions",
+        "Build a pre-sleep ritual that quiets a busy mind",
+        "Access premium content at a price that feels justified",
+        "Recommend the app confidently to others"
+      ],
       "pain_points": [
-        "App crashes during logging",
-        "Workout data sometimes disappears"      ],
+        "Uncertainty about committing to a paid subscription before seeing value",
+        "Wants reassurance the app is worth the cost before upgrading"
+      ],
       "context": [
-        "Logging activities immediately after workouts",
-        "Using the app during outdoor exercise"      ],
+        "Uses the app in the evening, often just before bed",
+        "Discovered it through a discounted or free trial offer",
+        "May use it during brief breaks in the day for stress relief",
+        "Shares recommendations with friends and family"
+      ],
       "constraints": [
-        "Logging must be reliable",
-        "Data should not be lost"       ],
-      "evidence_reviews": [
-        "rev_12",
-        "rev_45"      ]
-    }  ] }
+        "Price sensitive — discount framing was key to their conversion",
+        "Time limited - needs sessions that fit into a short window",
+        "Low tolerance for inconvenience; they want to open the app and feel calm quickly"
+      ],
+      "evidence_reviews": ["R0012", "R0017", "R0025", "R0031", "R0039"]
+    },
+    {
+      "id": "P2",
+      "name": "The Frustrated High Intent User",
+      "description": "Therapist referred user who knows exactly what they want but can't navigate to it when already in distress.",
+      "derived_from_group": "G2",
+      "goals": [
+        "Find specific soundscapes or exercises quickly",
+        "Reach desired content in as few steps as possible",
+        "Trust that the app will retrieve what they need when they are already in distress"
+      ],
+      "pain_points": [
+        "Cluttered, unclear navigation causes abandonment mid session",
+        "Search function fails to surface relevant content",
+        "Too many steps between opening the app and reaching useful content",
+        "Feels misled by feature advertising that doesn't match the in app experience",
+        "Giving up entirely and settling for a less suitable alternative"
+      ],
+      "context": [
+        "Opens the app specifically when in a state of stress or distress",
+        "Has been referred by a therapist or healthcare professional",
+        "Knows specific content they want",
+        "Has limited patience when already dysregulated"
+      ],
+      "constraints": [
+        "Cognitive load is high when they open the app, making complexity is especially damaging",
+        "Cannot afford to spend time navigating, needs instant access",
+        "Trust is fragile, one bad navigation experience can cause permanent damage"
+      ],
+      "evidence_reviews": ["R0016", "R0022", "R0064", "R0074", "R0166"]
+    },
+    {
+      "id": "P3",
+      "name": "The Risk averse terster",
+      "description": "Curious but guarded new user. Won't register or pay until they've seen real value for free.",
+      "derived_from_group": "G3",
+      "goals": [
+        "Evaluate whether the content quality justifies the price before committing",
+        "Access meaningful free content without mandatory account creation",
+        "Find a clear, honest preview of what premium unlocks"
+      ],
+      "pain_points": [
+        "Account creation demanded before any real content is accessible",
+        "Subscription cost feels unjustified relative to what is previewed",
+        "Feels like content quality is hidden behind unnecessary gates",
+        "Disconnect between what is advertised and what is freely available"
+      ],
+      "context": [
+        "Arrives from search or recommendation with genuine interest",
+        "Likely comparing multiple wellness apps simultaneously",
+        "Will spend time in the free tier before deciding to pay",
+        "Reads reviews and pricing carefully before converting"
+      ],
+      "constraints": [
+        "Will not register an account as their first action, needs to test out first",
+        "Budget conscious, needs to feel the price is fair",
+        "Low tolerance for dark patterns or bait and switch framing"
+      ],
+      "evidence_reviews": ["R0018", "R0029", "R0052", "R0056", "R0072"]
+    },
+    {
+      "id": "P4",
+      "name": "Frustrated Bug, Paying User",
+      "description": "Active subscriber hitting crashes or ads despite paying. Already committed, trust is decreasing",
+      "derived_from_group": "G4",
+      "goals": [
+        "Open the app reliably without crashes or errors",
+        "Experience the premium service they are paying for, ad free",
+        "Have tablet or non phone device work as well as a phone",
+        "Not have to reinstall or troubleshoot just to use the app"
+      ],
+      "pain_points": [
+        "App crashes on launch, particularly after an update",
+        "Ads appear despite active premium subscription",
+        "Tablet instability makes the app unusable on preferred device",
+        "No clear resolution path when bugs occur"
+      ],
+      "context": [
+        "Often uses the app on a tablet for a larger, more relaxing screen",
+        "Relies on the app as part of a regular routine",
+        "Encounters breakage after app updates",
+        "May use the app in family or shared household contexts"
+      ],
+      "constraints": [
+        "Already paid and has zero tolerance for ads",
+        "Not tech savvy enough to diagnose or work around crashes",
+        "Bug experiences accelerate cancellation consideration"
+      ],
+      "evidence_reviews": ["R0014", "R0050", "R0092", "R0125", "R0197"]
+    },
+    {
+      "id": "P5",
+      "name": "The Vengeful Subscriber",
+      "description": "Users who was charged unfairly and has been stonewalled by support. Patience is gone and chargeback likely.",
+      "derived_from_group": "G5",
+      "goals": [
+        "Receive a prompt refund or account reinstatement",
+        "Get a single clear resolution from support without repeating themselves",
+        "Understand exactly what they were charged and why",
+        "Feel heard and treated fairly, not like a fraud suspect"
+      ],
+      "pain_points": [
+        "Charged for a subscription they did not intend to start or could not access",
+        "Support repeatedly requests the same information, perceived as deliberate obstruction",
+        "Long response times from overseas support teams",
+        "Cannot get a straight answer on refund eligibility",
+        "Feels the company is prioritizing revenue retention over customer fairness"
+      ],
+      "context": [
+        "Has already left a one star review or is considering doing so",
+        "May be a secondhand user",
+        "Has contacted support multiple times across different channels",
+        "Is at high risk of initiating a chargeback or public complaint"
+      ],
+      "constraints": [
+        "Patience is fully exhausted and any further conflicts trigger escalation",
+        "May not have access to the original account credentials",
+        "Distrust of automated or templated support responses is extremely high"
+      ],
+      "evidence_reviews": ["R0002", "R0004", "R0013", "R0037", "R0062"]
+    }
+  ]
+}

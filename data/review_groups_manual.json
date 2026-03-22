@@ -2,11 +2,73 @@
   "groups": [
     {
       "group_id": "G1",
-      "theme": "App crashes during activity logging, THIS IS A AN EXAMPLE, PLEASE REMOVE ",
-      "review_ids": ["rev_12", "rev_33", "rev_45", "rev_89"],
+      "theme": "Positive experience and wellness benefits",
+      "review_ids": [
+        "R0012", "R0017", "R0020", "R0023", "R0025",
+        "R0030", "R0031", "R0032", "R0038", "R0039",
+        "R0049", "R0053", "R0058", "R0063", "R0065"
+      ],
       "example_reviews": [
-        "The app crashes every time I log my run.",
-        "Logging workouts causes the app to freeze."
-      ]
+        "enjoy very much would great free highly recommend though",
+        "chance got discount rate one year wasnt sure app now am able try some premium feature app super helpful when just ne moment release some stres help maintain peace throughout day someth slightly different than norm help wind down ready mind sleep"
+      ],
+      "notes": "Users report genuine stress relief and improved sleep. Premium trial converts well — discount framing resonates. Strong candidate for testimonial sourcing."
+    },
+    {
+      "group_id": "G2",
+      "theme": "Usability and navigation issues",
+      "review_ids": [
+        "R0016", "R0022", "R0064", "R0074", "R0102",
+        "R0115", "R0120", "R0166", "R0184", "R0194",
+        "R0239", "R0247", "R0250", "R0288", "R0291"
+      ],
+      "example_reviews": [
+        "desperately want give five star theory love app therapist recommend app client all time search friendly all especially when turn state distres clutter overwhelm just spent long go around circle try find soundscape thunderstorm just gave up listen rain leave like alway end up do please organize mes im begg",
+        "bait switch emdr advertis us what get operat app unnecessarily complextoo many steo get what want there any interruption restart completely then cannot simply return where were advertis cost what actually charg cost value untenable"
+      ],
+      "notes": "High-intent users blocked by cluttered navigation — even therapist-referred users abandon sessions. Key pain points: search, soundscape discovery, too many steps to reach content. Priority UX fix."
+    },
+    {
+      "group_id": "G3",
+      "theme": "Content quality and feature requests",
+      "review_ids": [
+        "R0018", "R0028", "R0029", "R0036", "R0052",
+        "R0054", "R0056", "R0057", "R0060", "R0069",
+        "R0071", "R0072", "R0087", "R0093", "R0095"
+      ],
+      "example_reviews": [
+        "hid lacklustre content behind obligation create account plu stuff expensive hell hard pas thank",
+        "four star content two star usability"
+      ],
+      "notes": "Users distinguish content quality from usability — content itself gets praise but is gated too aggressively. Account creation friction before value delivery is a recurring complaint. Consider a stronger free preview."
+    },
+    {
+      "group_id": "G4",
+      "theme": "Technical and performance issues",
+      "review_ids": [
+        "R0014", "R0050", "R0067", "R0092", "R0118",
+        "R0125", "R0136", "R0146", "R0181", "R0197",
+        "R0240", "R0252", "R0343", "R0421", "R0423"
+      ],
+      "example_reviews": [
+        "stop upgrade ad love pete already premium dont ne family stresse out when open effct paid",
+        "up until two day ago app work fine tablet now its try open then crash error message close app ive uninstall re install work heeelllppp"
+      ],
+      "notes": "Crashes, unexpected ads shown to paid users, and tablet-specific instability are the dominant issues. Ads appearing for premium subscribers is a trust-breaker and likely driving downgrades. Needs urgent QA pass."
+    },
+    {
+      "group_id": "G5",
+      "theme": "Subscription, billing, and free trial concerns",
+      "review_ids": [
+        "R0002", "R0004", "R0010", "R0013", "R0015",
+        "R0021", "R0035", "R0037", "R0041", "R0045",
+        "R0047", "R0062", "R0081", "R0084", "R0091"
+      ],
+      "example_reviews": [
+        "read one star review decide want try free version noth want them steal money",
+        "normally take money from customer give them someth other than headache stole money from wife wont reinstate account refund whole year subscription taken cant us customer support has been contact multiple time keep ask same information again again try get us stop communication can just keep money frustrat when their support team oversea too every message one two hour wast before get any reply"
+      ],
+      "notes": "Most severe sentiment group — allegations of unauthorized charges and unresponsive support. Repeated information requests from support perceived as stonewalling. Reputational risk is high; refund and escalation policy review recommended."
     }
-  ]}
+  ]
+}

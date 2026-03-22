@@ -1,0 +1,74 @@
+{
+  "personas": [
+    {
+      "id": "P1",
+      "name": "Auto Persona",
+      "description": "Generated fallback persona",
+      "derived_from_group": "G1",
+      "goals": [],
+      "pain_points": [],
+      "context": [],
+      "constraints": [],
+      "evidence_reviews": [
+        "3ce20d7e-0688-4f85-9300-2a3a213c6285",
+        "43423521-78f1-477e-ad92-765a4d30c7ae"
+      ]
+    },
+    {
+      "id": "P2",
+      "name": "Auto Persona",
+      "description": "Generated fallback persona",
+      "derived_from_group": "G2",
+      "goals": [],
+      "pain_points": [],
+      "context": [],
+      "constraints": [],
+      "evidence_reviews": [
+        "70227267-5ff8-45aa-9c95-2d37f033f71e",
+        "7f042d02-d7ef-4e97-bcbc-05cd5edeedce"
+      ]
+    },
+    {
+      "id": "P3",
+      "name": "Auto Persona",
+      "description": "Generated fallback persona",
+      "derived_from_group": "G3",
+      "goals": [],
+      "pain_points": [],
+      "context": [],
+      "constraints": [],
+      "evidence_reviews": [
+        "9e82ae1f-0a25-4af8-a66c-c3f758ef36f0",
+        "d5d011bf-4303-4039-82d8-6bdf251d7d99"
+      ]
+    },
+    {
+      "id": "P4",
+      "name": "Auto Persona",
+      "description": "Generated fallback persona",
+      "derived_from_group": "G4",
+      "goals": [],
+      "pain_points": [],
+      "context": [],
+      "constraints": [],
+      "evidence_reviews": [
+        "6829d6ae-3cfb-43f1-a5ed-06b74f574922",
+        "b7b5d699-0133-4c84-974d-10c497bfe282"
+      ]
+    },
+    {
+      "id": "P5",
+      "name": "Auto Persona",
+      "description": "Generated fallback persona",
+      "derived_from_group": "G5",
+      "goals": [],
+      "pain_points": [],
+      "context": [],
+      "constraints": [],
+      "evidence_reviews": [
+        "945626ae-6345-4a43-8af8-2ee723c0ac9e",
+        "1f4bf5f1-2dfc-4d62-a311-2bc3deff3cb3"
+      ]
+    }
+  ]
+}
