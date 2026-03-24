@@ -1,15 +1,126 @@
-{
-  "tests": [
-    {
-      "test_id": "T_auto_1",
-      "requirement_id": "FR_auto_1",
-      "scenario": "Logging a workout without crashing",
-      "steps": [
-        "Open the workout logging screen",
-        "Enter workout details",
-        "Submit the workout"
-      ],
-      "expected_result": "The workout is saved successfully and the application remains stable."
+[
+  {
+    "test_id": "tc_auto_1",
+    "requirement_id": "FR_auto_1",
+    "scenario": "Validate curated list of relaxation and meditation resources loads within 30 seconds",
+    "steps": [
+      "Launch the app",
+      "Wait for 30 seconds",
+      "Verify the curated list of relaxation and meditation resources is displayed"
+    ],
+    "expected_result": "The curated list of relaxation and meditation resources is displayed within 30 seconds of launching the app"
+  },
+  {
+    "test_id": "tc_auto_2",
+    "requirement_id": "FR_auto_2",
+    "scenario": "Validate curated list of relaxation and meditation resources loads within 3 seconds for 90% of users",
+    "steps": [
+      "Load the homepage",
+      "Measure the time taken for the curated list of relaxation and meditation resources to load",
+      "Repeat steps 1-2 for a statistically significant sample of users (e.g., 1000 users)"
+    ],
+    "expected_result": "The curated list of relaxation and meditation resources loads within 3 seconds for at least 900 out of 1000 users (90% success rate)"
+  },
+  {
+    "test_id": "tc_auto_3",
+    "requirement_id": "FR_auto_3",
+    "scenario": "Validation of personalized relaxation program generation time",
+    "steps": [
+      "Simulate a user completing a stress assessment survey",
+      "Verify that the system generates a personalized relaxation program within 5 minutes",
+      "Measure the time taken to generate the relaxation program"
+    ],
+    "expected_result": {
+      "program_generated": true,
+      "time_taken": {
+        "max": 300,
+        "unit": "seconds"
+      },
+      "user_percentage": {
+        "target": 80,
+        "unit": "percentage"
+      }
     }
-  ]
-}
+  },
+  {
+    "test_id": "tc_auto_4",
+    "requirement_id": "FR_auto_4",
+    "scenario": "Validate personalized relaxation program access after completing 5 sessions within 2 weeks",
+    "steps": [
+      "User completes 5 relaxation sessions within a 2-week period",
+      "User logs in to the system",
+      "User navigates to the relaxation program section"
+    ],
+    "expected_result": "The system provides access to a personalized relaxation program without prompting for payment"
+  },
+  {
+    "test_id": "tc_auto_5",
+    "requirement_id": "FR_auto_5",
+    "scenario": "Validate personalized sleep recommendation effectiveness",
+    "steps": [
+      "Simulate user data collection for 30 days to establish a baseline sleep pattern",
+      "Configure the system to provide personalized sleep recommendations",
+      "Collect and record user's sleep data for 30 nights after receiving recommendations",
+      "Calculate the number of nights the user fell asleep within 30 minutes of their desired bedtime"
+    ],
+    "expected_result": "The user fell asleep within 30 minutes of their desired bedtime for at least 80% of the 30 nights (24 or more nights out of 30)"
+  },
+  {
+    "test_id": "tc_auto_6",
+    "requirement_id": "FR_auto_6",
+    "scenario": "Validate personalized sleep recommendation effectiveness",
+    "steps": [
+      "Simulate user setting a desired bedtime",
+      "Generate 10 nights of sleep data with varying sleep quality",
+      "Provide personalized sleep recommendations for each night",
+      "Calculate the number of nights where user falls asleep within 30 minutes of desired bedtime"
+    ],
+    "expected_result": "User falls asleep within 30 minutes of desired bedtime for at least 8 out of 10 nights (80% success rate)"
+  },
+  {
+    "test_id": "tc_auto_7",
+    "requirement_id": "FR_auto_7",
+    "scenario": "Validate navigation to meditation content within 3 seconds",
+    "steps": [
+      "Launch the meditation app",
+      "Select a meditation session",
+      "Record the time taken to navigate to the meditation content",
+      "Repeat steps 2-3 for 10 user interactions"
+    ],
+    "expected_result": "The app navigates to the meditation content within 3 seconds for at least 9 out of 10 user interactions"
+  },
+  {
+    "test_id": "tc_auto_8",
+    "requirement_id": "FR_auto_8",
+    "scenario": "Validate navigation to meditation content within 3 seconds",
+    "steps": [
+      "Launch the meditation app",
+      "Select a meditation session",
+      "Record the time taken to navigate to the meditation content",
+      "Repeat steps 2-3 for 10 user interactions"
+    ],
+    "expected_result": "The app navigates to the meditation content within 3 seconds for at least 9 out of 10 user interactions"
+  },
+  {
+    "test_id": "tc_auto_9",
+    "requirement_id": "FR_auto_9",
+    "scenario": "Validate clear display of subscription fees and charges",
+    "steps": [
+      "Navigate to the payment page",
+      "Select a subscription plan",
+      "Review the payment summary before confirming payment"
+    ],
+    "expected_result": "The system displays a detailed breakdown of all subscription fees and charges, including the total amount to be paid."
+  },
+  {
+    "test_id": "tc_auto_10",
+    "requirement_id": "FR_auto_10",
+    "scenario": "Validate clear display of charges and fees before subscription payment",
+    "steps": [
+      "Navigate to the subscription page",
+      "Select a subscription plan",
+      "Review the subscription details without proceeding to payment"
+    ],
+    "expected_result": "The system displays a clear and detailed breakdown of all charges and fees associated with the subscription, including but not limited to the subscription fee, taxes, and any additional fees."
+  }
+]

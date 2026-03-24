@@ -1,74 +1,101 @@
-{
-  "personas": [
-    {
-      "id": "P1",
-      "name": "Auto Persona",
-      "description": "Generated fallback persona",
-      "derived_from_group": "G1",
-      "goals": [],
-      "pain_points": [],
-      "context": [],
-      "constraints": [],
-      "evidence_reviews": [
-        "3ce20d7e-0688-4f85-9300-2a3a213c6285",
-        "43423521-78f1-477e-ad92-765a4d30c7ae"
-      ]
-    },
-    {
-      "id": "P2",
-      "name": "Auto Persona",
-      "description": "Generated fallback persona",
-      "derived_from_group": "G2",
-      "goals": [],
-      "pain_points": [],
-      "context": [],
-      "constraints": [],
-      "evidence_reviews": [
-        "70227267-5ff8-45aa-9c95-2d37f033f71e",
-        "7f042d02-d7ef-4e97-bcbc-05cd5edeedce"
-      ]
-    },
-    {
-      "id": "P3",
-      "name": "Auto Persona",
-      "description": "Generated fallback persona",
-      "derived_from_group": "G3",
-      "goals": [],
-      "pain_points": [],
-      "context": [],
-      "constraints": [],
-      "evidence_reviews": [
-        "9e82ae1f-0a25-4af8-a66c-c3f758ef36f0",
-        "d5d011bf-4303-4039-82d8-6bdf251d7d99"
-      ]
-    },
-    {
-      "id": "P4",
-      "name": "Auto Persona",
-      "description": "Generated fallback persona",
-      "derived_from_group": "G4",
-      "goals": [],
-      "pain_points": [],
-      "context": [],
-      "constraints": [],
-      "evidence_reviews": [
-        "6829d6ae-3cfb-43f1-a5ed-06b74f574922",
-        "b7b5d699-0133-4c84-974d-10c497bfe282"
-      ]
-    },
-    {
-      "id": "P5",
-      "name": "Auto Persona",
-      "description": "Generated fallback persona",
-      "derived_from_group": "G5",
-      "goals": [],
-      "pain_points": [],
-      "context": [],
-      "constraints": [],
-      "evidence_reviews": [
-        "945626ae-6345-4a43-8af8-2ee723c0ac9e",
-        "1f4bf5f1-2dfc-4d62-a311-2bc3deff3cb3"
-      ]
-    }
-  ]
-}
+[
+  {
+    "persona_id": 1,
+    "name": "Alexis Relax",
+    "age_range": "25-45",
+    "occupation": "Health and wellness enthusiast",
+    "context": "Seeking relaxation and stress relief through sound and meditation",
+    "goals": [
+      "Find effective relaxation techniques",
+      "Improve emotional well-being",
+      "Discover new sound and meditation resources"
+    ],
+    "pain_points": [
+      "Difficulty finding relevant content",
+      "Frustrating app experiences",
+      "Expensive subscription models"
+    ],
+    "tech_comfort": "Moderate",
+    "quote": "I just want to relax, not get caught up in annoying app experiences",
+    "group_theme": "Relaxation and stress relief"
+  },
+  {
+    "persona_id": 1,
+    "name": "Emily Thompson",
+    "age_range": "25-45",
+    "occupation": "Working Professional",
+    "context": "Seeking relaxation and stress relief through sleep and mindfulness",
+    "goals": [
+      "Improve sleep quality",
+      "Reduce stress and anxiety",
+      "Find relaxation techniques"
+    ],
+    "pain_points": [
+      "Difficulty navigating app",
+      "Inconsistent content",
+      "Payment required for personalized program"
+    ],
+    "tech_comfort": "High",
+    "quote": "I love the relaxation and mindfulness content, it's high quality and easy to explore.",
+    "group_theme": "Health and Wellness"
+  },
+  {
+    "persona_id": 1,
+    "name": "Alex",
+    "age_range": "25-45",
+    "occupation": "Working parent",
+    "context": "Struggles with stress and anxiety, specifically with sleep",
+    "goals": [
+      "Improve sleep quality",
+      "Reduce stress and anxiety"
+    ],
+    "pain_points": [
+      "Difficulty falling asleep",
+      "Feeling overwhelmed as a parent"
+    ],
+    "tech_comfort": "High",
+    "quote": "The app has been phenomenal in helping me calm down and sleep better, it's even better than my wife in that regard",
+    "group_theme": "Sleep and relaxation"
+  },
+  {
+    "persona_id": 1234,
+    "name": "Alex Chen",
+    "age_range": "35-45",
+    "occupation": "Working Parent",
+    "context": "Regular user of meditation and mindfulness apps, seeking relaxation and stress relief",
+    "goals": [
+      "Find a reliable meditation app with simple navigation",
+      "Access a variety of meditation content"
+    ],
+    "pain_points": [
+      "Frustrating app errors and crashes",
+      "Complicated app navigation",
+      "Unwanted notifications",
+      "Limited search functionality"
+    ],
+    "tech_comfort": "Moderate",
+    "quote": "I just want an app that works and helps me relax, without all the hassle",
+    "group_theme": "Frustration with app functionality and navigation"
+  },
+  {
+    "persona_id": "AG1-P1",
+    "name": "Frustrated Fiona",
+    "age_range": "25-45",
+    "occupation": "Working Professional",
+    "context": "Busy individual seeking convenient and affordable app solutions",
+    "goals": [
+      "Get value for money",
+      "Avoid being scammed",
+      "Find reliable services"
+    ],
+    "pain_points": [
+      "Expensive subscriptions",
+      "Deceptive free trials",
+      "Difficulty canceling subscriptions",
+      "Unexpected charges"
+    ],
+    "tech_comfort": "Moderate",
+    "quote": "I just want to use an app without being taken advantage of. Is that too much to ask?",
+    "group_theme": "Skeptical of money-grabbing apps, seeks transparency and fairness in subscription services"
+  }
+]
