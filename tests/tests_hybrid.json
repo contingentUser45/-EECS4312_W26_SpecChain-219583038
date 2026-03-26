@@ -3,14 +3,122 @@
     {
       "test_id": "T_hybrid_1",
       "requirement_id": "FR_hybrid_1",
-      "scenario": "Save a workout entry without crashing",
+      "scenario": "Access premium content during free trial",
       "steps": [
-        "Open the workout logging feature",
-        "Enter workout information",
-        "Submit the workout"
+        "Create a new user account",
+        "Navigate to premium content",
+        "Attempt to access premium content"
       ],
-      "expected_result": "The workout is saved successfully and the application does not crash.",
-      "notes": "Revised the expected result to match the updated hybrid requirement."
+      "expected_result": "The user can access premium content without payment for at least 7 days",
+      "notes": "Updated trial duration and simplified steps to match hybrid requirement"
+    },
+    {
+      "test_id": "T_hybrid_2",
+      "requirement_id": "FR_hybrid_2",
+      "scenario": "Display subscription pricing before purchase",
+      "steps": [
+        "Open the subscription page",
+        "Select a subscription option",
+        "View pricing details"
+      ],
+      "expected_result": "All costs billing frequency and renewal terms are displayed before confirmation",
+      "notes": "Rewritten to remove JSON output and ensure clarity and testability"
+    },
+    {
+      "test_id": "T_hybrid_3",
+      "requirement_id": "FR_hybrid_3",
+      "scenario": "Cancel subscription within the app",
+      "steps": [
+        "Log in with an active subscription",
+        "Navigate to account settings",
+        "Select cancel subscription"
+      ],
+      "expected_result": "The user can cancel the subscription within 3 steps",
+      "notes": "Aligned with simplified cancellation requirement"
+    },
+    {
+      "test_id": "T_hybrid_4",
+      "requirement_id": "FR_hybrid_4",
+      "scenario": "Access free content without subscription",
+      "steps": [
+        "Open the app without a subscription",
+        "Navigate to content library",
+        "Identify accessible free content"
+      ],
+      "expected_result": "At least 10 content items are accessible without payment",
+      "notes": "Resolved conflict between 10 and 20 items from automated tests"
+    },
+    {
+      "test_id": "T_hybrid_5",
+      "requirement_id": "FR_hybrid_5",
+      "scenario": "Continuous audio playback without interruption",
+      "steps": [
+        "Start audio playback",
+        "Leave the session running",
+        "Monitor playback duration"
+      ],
+      "expected_result": "Audio plays continuously for at least 2 hours without unexpected interruption under normal conditions",
+      "notes": "Replaced unrealistic overnight test with practical duration"
+    },
+    {
+      "test_id": "T_hybrid_6",
+      "requirement_id": "FR_hybrid_6",
+      "scenario": "Search returns relevant results",
+      "steps": [
+        "Enter a keyword in the search bar",
+        "Execute the search",
+        "Review results"
+      ],
+      "expected_result": "The system returns relevant content results ordered by relevance",
+      "notes": "Removed unsupported timing and JSON format constraints"
+    },
+    {
+      "test_id": "T_hybrid_7",
+      "requirement_id": "FR_hybrid_7",
+      "scenario": "Access content within limited interactions",
+      "steps": [
+        "Open the app",
+        "Navigate from home screen to content",
+        "Count user interactions"
+      ],
+      "expected_result": "Content is accessible within 3 interactions",
+      "notes": "Added measurable interaction constraint"
+    },
+    {
+      "test_id": "T_hybrid_8",
+      "requirement_id": "FR_hybrid_8",
+      "scenario": "Identify free and premium content labels",
+      "steps": [
+        "Browse content library",
+        "View multiple content items",
+        "Check item labels"
+      ],
+      "expected_result": "Each content item is labeled as free or premium",
+      "notes": "Clarified expected result to remove ambiguity"
+    },
+    {
+      "test_id": "T_hybrid_9",
+      "requirement_id": "FR_hybrid_9",
+      "scenario": "Limit upgrade prompts during session",
+      "steps": [
+        "Start a content session",
+        "Continue using the app",
+        "Count upgrade prompts shown"
+      ],
+      "expected_result": "No more than one upgrade prompt appears during the session",
+      "notes": "Refined to make intrusive behavior measurable"
+    },
+    {
+      "test_id": "T_hybrid_10",
+      "requirement_id": "FR_hybrid_10",
+      "scenario": "App stability during normal usage",
+      "steps": [
+        "Open the app",
+        "Perform actions such as play pause and navigation",
+        "Monitor for crashes"
+      ],
+      "expected_result": "The app does not crash during at least 95 percent of sessions",
+      "notes": "Rewritten to align with measurable stability requirement"
     }
   ]
 }

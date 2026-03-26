@@ -1,101 +1,101 @@
 [
   {
     "persona_id": 1,
-    "name": "Alexis Relax",
-    "age_range": "25-45",
-    "occupation": "Health and wellness enthusiast",
-    "context": "Seeking relaxation and stress relief through sound and meditation",
+    "name": "Alex Chen",
+    "age_range": "25-35",
+    "occupation": "Marketing Specialist",
+    "context": "Anxious and stressed, seeking relaxation and sleep aid",
     "goals": [
-      "Find effective relaxation techniques",
-      "Improve emotional well-being",
-      "Discover new sound and meditation resources"
+      "Manage anxiety and stress",
+      "Improve sleep quality",
+      "Explore mindfulness techniques"
     ],
     "pain_points": [
-      "Difficulty finding relevant content",
-      "Frustrating app experiences",
-      "Expensive subscription models"
+      "Costly subscription model",
+      "Limited story options",
+      "Aggressive payment requests"
     ],
     "tech_comfort": "Moderate",
-    "quote": "I just want to relax, not get caught up in annoying app experiences",
-    "group_theme": "Relaxation and stress relief"
+    "quote": "I was desperate for something to help me relax and sleep. This app has been a lifesaver, but I wish they had more story options.",
+    "group_theme": "Anxious Seekers"
   },
   {
-    "persona_id": 1,
-    "name": "Emily Thompson",
-    "age_range": "25-45",
+    "persona_id": "A5-1",
+    "name": "Alex Chen",
+    "age_range": "25-44",
     "occupation": "Working Professional",
-    "context": "Seeking relaxation and stress relief through sleep and mindfulness",
+    "context": "Alex is a busy professional who values convenience and ease of use when it comes to streaming services. They are frustrated with the current app's performance and customer support.",
+    "goals": [
+      "Enjoy seamless video streaming",
+      "Manage membership and billing easily"
+    ],
+    "pain_points": [
+      "Poor app performance",
+      "Difficulties with membership management",
+      "Unresponsive customer support",
+      "In-app notifications interrupting sessions"
+    ],
+    "tech_comfort": "Moderate",
+    "quote": "I just want to watch videos without being bothered by a clunky app and poor customer service.",
+    "group_theme": "Frustrated Users"
+  },
+  {
+    "persona_id": "A4-1",
+    "name": "Frustrated Fiona",
+    "age_range": "25-45",
+    "occupation": "Working professional",
+    "context": "Seeking relaxation and mindfulness apps",
+    "goals": [
+      "find free or low-cost relaxation content",
+      "avoid subscription-based services"
+    ],
+    "pain_points": [
+      "aggressive monetization tactics",
+      "poor content quality",
+      "difficult onboarding process"
+    ],
+    "tech_comfort": "Moderate",
+    "quote": "I just want to relax, not get roped into a subscription trap.",
+    "group_theme": "Skeptical of monetization, seeks authentic relaxation content"
+  },
+  {
+    "persona_id": "A3-001",
+    "name": "Austin",
+    "age_range": "35-50",
+    "occupation": "Creative Professional",
+    "context": "Austin is a laid-back individual who values relaxation and mindfulness. He has been using a meditation and sleep app for five years.",
     "goals": [
       "Improve sleep quality",
+      "Reduce anxiety",
+      "Enhance mindfulness"
+    ],
+    "pain_points": [
+      "App update issues",
+      "Difficulty searching for sleep stories",
+      "Refund process took too long"
+    ],
+    "tech_comfort": "High",
+    "quote": "I just love how his voice calms me down, I can actually fall asleep much faster.",
+    "group_theme": "Relaxation and Sleep"
+  },
+  {
+    "persona_id": "A1-P1",
+    "name": "Serenity Sara",
+    "age_range": "25-45",
+    "occupation": "Working professional",
+    "context": "High stress levels, seeking relaxation and calmness",
+    "goals": [
       "Reduce stress and anxiety",
+      "Improve sleep quality",
       "Find relaxation techniques"
     ],
     "pain_points": [
-      "Difficulty navigating app",
-      "Inconsistent content",
-      "Payment required for personalized program"
+      "Frustrated with paid subscriptions",
+      "Worried about being charged unexpectedly",
+      "Seeking free or affordable relaxation tools"
     ],
-    "tech_comfort": "High",
-    "quote": "I love the relaxation and mindfulness content, it's high quality and easy to explore.",
-    "group_theme": "Health and Wellness"
-  },
-  {
-    "persona_id": 1,
-    "name": "Alex",
-    "age_range": "25-45",
-    "occupation": "Working parent",
-    "context": "Struggles with stress and anxiety, specifically with sleep",
-    "goals": [
-      "Improve sleep quality",
-      "Reduce stress and anxiety"
-    ],
-    "pain_points": [
-      "Difficulty falling asleep",
-      "Feeling overwhelmed as a parent"
-    ],
-    "tech_comfort": "High",
-    "quote": "The app has been phenomenal in helping me calm down and sleep better, it's even better than my wife in that regard",
-    "group_theme": "Sleep and relaxation"
-  },
-  {
-    "persona_id": 1234,
-    "name": "Alex Chen",
-    "age_range": "35-45",
-    "occupation": "Working Parent",
-    "context": "Regular user of meditation and mindfulness apps, seeking relaxation and stress relief",
-    "goals": [
-      "Find a reliable meditation app with simple navigation",
-      "Access a variety of meditation content"
-    ],
-    "pain_points": [
-      "Frustrating app errors and crashes",
-      "Complicated app navigation",
-      "Unwanted notifications",
-      "Limited search functionality"
-    ],
-    "tech_comfort": "Moderate",
-    "quote": "I just want an app that works and helps me relax, without all the hassle",
-    "group_theme": "Frustration with app functionality and navigation"
-  },
-  {
-    "persona_id": "AG1-P1",
-    "name": "Frustrated Fiona",
-    "age_range": "25-45",
-    "occupation": "Working Professional",
-    "context": "Busy individual seeking convenient and affordable app solutions",
-    "goals": [
-      "Get value for money",
-      "Avoid being scammed",
-      "Find reliable services"
-    ],
-    "pain_points": [
-      "Expensive subscriptions",
-      "Deceptive free trials",
-      "Difficulty canceling subscriptions",
-      "Unexpected charges"
-    ],
-    "tech_comfort": "Moderate",
-    "quote": "I just want to use an app without being taken advantage of. Is that too much to ask?",
-    "group_theme": "Skeptical of money-grabbing apps, seeks transparency and fairness in subscription services"
+    "tech_comfort": "Moderate to high",
+    "quote": "Love calm meditation, smooth nature sound, many choose from, thank wonderful app",
+    "group_theme": "Free and accessible relaxation tools"
   }
 ]

@@ -1,126 +1,121 @@
-[
-  {
-    "test_id": "tc_auto_1",
-    "requirement_id": "FR_auto_1",
-    "scenario": "Validate curated list of relaxation and meditation resources loads within 30 seconds",
-    "steps": [
-      "Launch the app",
-      "Wait for 30 seconds",
-      "Verify the curated list of relaxation and meditation resources is displayed"
-    ],
-    "expected_result": "The curated list of relaxation and meditation resources is displayed within 30 seconds of launching the app"
-  },
-  {
-    "test_id": "tc_auto_2",
-    "requirement_id": "FR_auto_2",
-    "scenario": "Validate curated list of relaxation and meditation resources loads within 3 seconds for 90% of users",
-    "steps": [
-      "Load the homepage",
-      "Measure the time taken for the curated list of relaxation and meditation resources to load",
-      "Repeat steps 1-2 for a statistically significant sample of users (e.g., 1000 users)"
-    ],
-    "expected_result": "The curated list of relaxation and meditation resources loads within 3 seconds for at least 900 out of 1000 users (90% success rate)"
-  },
-  {
-    "test_id": "tc_auto_3",
-    "requirement_id": "FR_auto_3",
-    "scenario": "Validation of personalized relaxation program generation time",
-    "steps": [
-      "Simulate a user completing a stress assessment survey",
-      "Verify that the system generates a personalized relaxation program within 5 minutes",
-      "Measure the time taken to generate the relaxation program"
-    ],
-    "expected_result": {
-      "program_generated": true,
-      "time_taken": {
-        "max": 300,
-        "unit": "seconds"
-      },
-      "user_percentage": {
-        "target": 80,
-        "unit": "percentage"
+{
+  "tests": [
+    {
+      "test_id": "T_auto_1",
+      "requirement_id": "FR_auto_1",
+      "scenario": "Validate diverse story options for relaxation and sleep aid within the first 30 days of use",
+      "steps": [
+        "Launch the application and simulate 30 days of use",
+        "Navigate to the relaxation and sleep aid section",
+        "Retrieve and count the number of diverse story options available"
+      ],
+      "expected_result": "The system provides a minimum of 50 diverse story options for relaxation and sleep aid"
+    },
+    {
+      "test_id": "T_auto_2",
+      "requirement_id": "FR_auto_2",
+      "scenario": "Validate the system provides a minimum of 50 diverse story options for relaxation and sleep aid",
+      "steps": [
+        "Launch the app and navigate to the relaxation and sleep aid section",
+        "Retrieve the list of available story options",
+        "Count the number of unique story options"
+      ],
+      "expected_result": "The system provides at least 50 unique story options for relaxation and sleep aid"
+    },
+    {
+      "test_id": "T_auto_3",
+      "requirement_id": "FR_auto_3",
+      "scenario": "Validate video streaming uptime for multiple users",
+      "steps": [
+        "Simulate 100 concurrent users streaming video content for 1 hour",
+        "Monitor and record the number of users experiencing video interruptions",
+        "Calculate the percentage of users with uninterrupted video streaming"
+      ],
+      "expected_result": "At least 95% of users stream video content without interruption"
+    },
+    {
+      "test_id": "T_auto_4",
+      "requirement_id": "FR_auto_4",
+      "scenario": "Validate video streaming uptime for a large number of users",
+      "steps": [
+        "Simulate 1000 concurrent users streaming video content for 1 hour",
+        "Monitor and record the number of users experiencing video interruptions",
+        "Calculate the percentage of users streaming without interruption"
+      ],
+      "expected_result": "At least 95% of users stream video content without interruption"
+    },
+    {
+      "test_id": "T_auto_5",
+      "requirement_id": "FR_auto_5",
+      "scenario": "Access relaxation content without subscription or payment",
+      "steps": [
+        "Launch the application",
+        "Navigate to the relaxation content section",
+        "Select a relaxation content item (e.g., a meditation video or calming music track)"
+      ],
+      "expected_result": "The selected relaxation content item plays without prompting for subscription or payment details"
+    },
+    {
+      "test_id": "T_auto_6",
+      "requirement_id": "FR_auto_6",
+      "scenario": "Access relaxation content without subscription or payment",
+      "steps": [
+        "Launch the application",
+        "Navigate to the relaxation content section",
+        "Select a relaxation content item (e.g. a meditation video)"
+      ],
+      "expected_result": "The selected relaxation content item plays without prompting for subscription or payment details"
+    },
+    {
+      "test_id": "T_auto_7",
+      "requirement_id": "FR_auto_7",
+      "scenario": "Validate search function response time",
+      "steps": [
+        "Login to the system",
+        "Navigate to the search function",
+        "Enter a valid search query for a sleep story",
+        "Initiate the search",
+        "Measure the response time"
+      ],
+      "expected_result": "The search results are displayed within 3 seconds"
+    },
+    {
+      "test_id": "T_auto_8",
+      "requirement_id": "FR_auto_8",
+      "scenario": "Validate search function response time",
+      "steps": [
+        "Login to the system",
+        "Navigate to the search function",
+        "Enter a valid search query for a sleep story",
+        "Record the time taken for the search results to load",
+        "Repeat steps 3-4 for a total of 100 searches"
+      ],
+      "expected_result": "At least 90% of searches return results within 3 seconds"
+    },
+    {
+      "test_id": "T_auto_9",
+      "requirement_id": "FR_auto_9",
+      "scenario": "Validate availability of free relaxation meditation sessions",
+      "steps": [
+        "Launch the application and navigate to the meditation sessions section",
+        "Verify that there is a section or category for free relaxation meditation sessions",
+        "Count the number of free relaxation meditation sessions available without a paid subscription"
+      ],
+      "expected_result": "There are at least 20 free relaxation meditation sessions available without requiring a paid subscription"
+    },
+    {
+      "test_id": "T_auto_10",
+      "requirement_id": "FR_auto_10",
+      "scenario": "Validate availability of free relaxation meditation sessions",
+      "steps": [
+        "Launch the application and navigate to the meditation sessions section",
+        "Identify and count the number of free relaxation meditation sessions available",
+        "Verify that no payment or subscription is required to access these sessions"
+      ],
+      "expected_result": {
+        "number_of_free_sessions": 20,
+        "no_payment_required": true
       }
     }
-  },
-  {
-    "test_id": "tc_auto_4",
-    "requirement_id": "FR_auto_4",
-    "scenario": "Validate personalized relaxation program access after completing 5 sessions within 2 weeks",
-    "steps": [
-      "User completes 5 relaxation sessions within a 2-week period",
-      "User logs in to the system",
-      "User navigates to the relaxation program section"
-    ],
-    "expected_result": "The system provides access to a personalized relaxation program without prompting for payment"
-  },
-  {
-    "test_id": "tc_auto_5",
-    "requirement_id": "FR_auto_5",
-    "scenario": "Validate personalized sleep recommendation effectiveness",
-    "steps": [
-      "Simulate user data collection for 30 days to establish a baseline sleep pattern",
-      "Configure the system to provide personalized sleep recommendations",
-      "Collect and record user's sleep data for 30 nights after receiving recommendations",
-      "Calculate the number of nights the user fell asleep within 30 minutes of their desired bedtime"
-    ],
-    "expected_result": "The user fell asleep within 30 minutes of their desired bedtime for at least 80% of the 30 nights (24 or more nights out of 30)"
-  },
-  {
-    "test_id": "tc_auto_6",
-    "requirement_id": "FR_auto_6",
-    "scenario": "Validate personalized sleep recommendation effectiveness",
-    "steps": [
-      "Simulate user setting a desired bedtime",
-      "Generate 10 nights of sleep data with varying sleep quality",
-      "Provide personalized sleep recommendations for each night",
-      "Calculate the number of nights where user falls asleep within 30 minutes of desired bedtime"
-    ],
-    "expected_result": "User falls asleep within 30 minutes of desired bedtime for at least 8 out of 10 nights (80% success rate)"
-  },
-  {
-    "test_id": "tc_auto_7",
-    "requirement_id": "FR_auto_7",
-    "scenario": "Validate navigation to meditation content within 3 seconds",
-    "steps": [
-      "Launch the meditation app",
-      "Select a meditation session",
-      "Record the time taken to navigate to the meditation content",
-      "Repeat steps 2-3 for 10 user interactions"
-    ],
-    "expected_result": "The app navigates to the meditation content within 3 seconds for at least 9 out of 10 user interactions"
-  },
-  {
-    "test_id": "tc_auto_8",
-    "requirement_id": "FR_auto_8",
-    "scenario": "Validate navigation to meditation content within 3 seconds",
-    "steps": [
-      "Launch the meditation app",
-      "Select a meditation session",
-      "Record the time taken to navigate to the meditation content",
-      "Repeat steps 2-3 for 10 user interactions"
-    ],
-    "expected_result": "The app navigates to the meditation content within 3 seconds for at least 9 out of 10 user interactions"
-  },
-  {
-    "test_id": "tc_auto_9",
-    "requirement_id": "FR_auto_9",
-    "scenario": "Validate clear display of subscription fees and charges",
-    "steps": [
-      "Navigate to the payment page",
-      "Select a subscription plan",
-      "Review the payment summary before confirming payment"
-    ],
-    "expected_result": "The system displays a detailed breakdown of all subscription fees and charges, including the total amount to be paid."
-  },
-  {
-    "test_id": "tc_auto_10",
-    "requirement_id": "FR_auto_10",
-    "scenario": "Validate clear display of charges and fees before subscription payment",
-    "steps": [
-      "Navigate to the subscription page",
-      "Select a subscription plan",
-      "Review the subscription details without proceeding to payment"
-    ],
-    "expected_result": "The system displays a clear and detailed breakdown of all charges and fees associated with the subscription, including but not limited to the subscription fee, taxes, and any additional fees."
-  }
-]
+  ]
+}

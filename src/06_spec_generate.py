@@ -41,7 +41,7 @@ def load_json(path):
 def generate_requirement(client,persona,group,idx):
     persona_text=json.dumps(persona,indent=2)
     theme=group.get("group_theme","user needs")
-    gid=group.get("group_id",f"AG{idx}")
+    gid=group.get("group_id",f"A{idx}")
     user_prompt=commands.format(persona=persona_text,theme=theme,gid=gid)
     try:
         res=client.chat.completions.create(

@@ -1,31 +1,102 @@
-{
-  "personas": [
-    {
-      "id": "P_hybrid_1",
-      "name": "Frequent Fitness Logger",
-      "description": "A user who depends on the app for regular workout tracking and expects logging to work reliably during or immediately after exercise.",
-      "derived_from_group": "H1",
-      "goals": [
-        "Log workouts quickly",
-        "Track activities without interruption"
-      ],
-      "pain_points": [
-        "The app crashes while saving workouts",
-        "Previously entered activity data may disappear"
-      ],
-      "context": [
-        "Using the app during exercise sessions",
-        "Using the app outdoors or while moving"
-      ],
-      "constraints": [
-        "Workout logging must complete without crashing",
-        "Saved workout data must persist"
-      ],
-      "evidence_reviews": [
-        "rev_12",
-        "rev_41"
-      ],
-      "notes": "Refined the persona description and removed an unsupported assumption about synchronization."
-    }
-  ]
-}
+[
+  {
+    "persona_id": "P_hybrid_1",
+    "name": "Alexis Thompson",
+    "age_range": "25-34",
+    "occupation": "Working Professional",
+    "context": "Uses the app for stress relief and relaxation but is sensitive to subscription cost and free trial limitations",
+    "goals": [
+      "Reduce stress",
+      "Access relaxation content regularly",
+      "Evaluate value before committing to a subscription"
+    ],
+    "pain_points": [
+      "Subscription cost feels too high",
+      "Free trial period is too short",
+      "Concerns about billing and refunds"
+    ],
+    "tech_comfort": "Moderate",
+    "quote": "I love the app, I just wish the free part lasted a little longer.",
+    "group_theme": "Pricing, Subscription Value, and Billing Concerns",
+    "notes": "pointed to cost related concerns and removed vague 'self-care' phrasing. Grounded pain points in pricing and trial limitations from the review group."
+  },
+  {
+    "persona_id": "P_hybrid_2",
+    "name": "Alex Chen",
+    "age_range": "25-45",
+    "occupation": "Working Professional",
+    "context": "Values relaxation and sleep content but feels the app is too expensive for continued use",
+    "goals": [
+      "Improve sleep quality",
+      "Reduce stress and anxiety"
+    ],
+    "pain_points": [
+      "High subscription cost",
+      "Perceived lack of value compared to free alternatives"
+    ],
+    "tech_comfort": "Moderate",
+    "quote": "I love the variety of content, but it's just too pricey.",
+    "group_theme": "Pricing, Subscription Value, and Billing Concerns",
+    "notes": "removed unsupported claims about limited time and generalized frustrations. Focused on cost vs value, consistent with the pricing group."
+  },
+  {
+    "persona_id": "P_hybrid_3",
+    "name": "Emily Thompson",
+    "age_range": "25-45",
+    "occupation": "Working Parent",
+    "context": "Uses the app to help with sleep routines but is affected by interruptions or reliability issues",
+    "goals": [
+      "Help her child fall asleep more easily",
+      "Maintain consistent nighttime routines"
+    ],
+    "pain_points": [
+      "App interruptions during use",
+      "Unreliable playback or shutdowns"
+    ],
+    "tech_comfort": "Moderate",
+    "quote": "It worked to calm my daughter down, but it shut down in the middle of the night.",
+    "group_theme": "Severe Negative Experiences (bugs, billing errors, and trust issues)",
+    "notes": "Removed unsupported claims about general app effectiveness. Refocused on reliability issues, aligning with a negative experience group."
+  },
+  {
+    "persona_id": "P_hybrid_4",
+    "name": "Alex Chen",
+    "age_range": "25-44",
+    "occupation": "Working Professional",
+    "context": "Interested in wellness apps but becomes frustrated with poor usability and navigation complexity",
+    "goals": [
+      "Quickly find relevant content",
+      "Use the app efficiently without friction"
+    ],
+    "pain_points": [
+      "Confusing navigation",
+      "Too many steps to access content",
+      "Poor search functionality"
+    ],
+    "tech_comfort": "Moderate",
+    "quote": "It's unbelievably awkward.",
+    "group_theme": "Usability, Navigation, and Feature Issues",
+    "notes": "removed unsupported claims and focused strictly on usability issues."
+  },
+  {
+    "persona_id": "P_hybrid_5",
+    "name": "Frank",
+    "age_range": "35-50",
+    "occupation": "Worker",
+    "context": "Highly price-sensitive user who avoids subscriptions and is skeptical of paid apps",
+    "goals": [
+      "Avoid unnecessary spending",
+      "Find free or low-cost alternatives"
+    ],
+    "pain_points": [
+      "Subscription pricing feels unjustified",
+      "Distrust of billing practices",
+      "Perception of app as a 'money grab'"
+    ],
+    "tech_comfort": "Basic",
+    "quote": "I'd rather not spend a dime on subscriptions, it's just a money grab.",
+    "group_theme": "Pricing, Subscription Value, and Billing Concerns",
+    "notes": "Removed stereotypical and unsupported details and grounded persona in anti subscription thoughts from reviews."
+  }
+]
+

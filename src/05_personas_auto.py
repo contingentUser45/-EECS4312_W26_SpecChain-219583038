@@ -2,7 +2,7 @@
 import json, os, sys, time
 from groq import Groq
 
-num_clusters=5
+num_clusters=10
 batch_size=50
 model_id="meta-llama/llama-4-scout-17b-16e-instruct"
 root=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -56,7 +56,7 @@ def call_group(client,batch,retries=3):
             return json.loads(res.choices[0].message.content)
         except:
             pass
-    print("skipped batch - something went wrong")
+    print("skipped batch - something went wrong (check your api key is valid)")
     return {"groups":[]}
 
 def semantic_group(client,reviews):
@@ -82,7 +82,7 @@ def semantic_group(client,reviews):
     for i,(gid,b) in enumerate(sorted(buckets.items()),1):
         cluster=b["reviews"]
         groups.append({
-            "group_id":f"ag{i}",
+            "group_id":f"A{i}",
             "group_theme":b["theme"],
             "review_ids":[r["review_id"] for r in cluster],
             "review_count":len(cluster),

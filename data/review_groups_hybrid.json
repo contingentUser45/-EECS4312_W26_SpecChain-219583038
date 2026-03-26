@@ -1,13 +1,85 @@
-{  "groups": [
+{
+  "groups": [
+    {
+      "group_id": "H4",
+      "group_theme": "Pricing, Subscription Value, and Billing Concerns",
+      "review_ids": [
+        "R0012","R0017","R0021","R0024","R0053","R0068","R0073","R0082",
+        "R0104","R0106","R0113","R0115","R0117","R0120","R0132","R0135",
+        "R0137","R0138","R0143","R0144","R0146","R0152"
+      ],
+      "review_count": 22,
+      "representative_quotes": [
+        "want charge sixsix six month",
+        "only seven day free trial most app only work expensive subscription",
+        "cannot believe charge two twomonth love app price crazy",
+        "cost how much between youtube alexa there plenty great relax video sound free"
+      ],
+      "notes": "Changed to focus strictly on pricing, perceived value, and billing complaints. Removed unrelated emotional/mental health and general negative reviews."
+    },
+    {
+      "group_id": "H3",
+      "group_theme": "Positive Experiences and Benefits",
+      "review_ids": [
+        "R0003","R0006","R0014","R0016","R0022","R0066","R0069","R0070",
+        "R0080","R0084","R0085","R0087","R0103","R0105","R0128"
+      ],
+      "review_count": 15,
+      "representative_quotes": [
+        "someth about his voicei just fall asleep much faster",
+        "excellent app help calm down",
+        "awesome app fantastic content",
+        "enjoy very much would great free highly recommend though"
+      ],
+      "notes": "Cleaned to include only clearly positive sentiment. Removed reviews containing complaints "
+    },
+    {
+      "group_id": "H5",
+      "group_theme": "Mixed Feedback: Good Content but Notable Drawbacks",
+      "review_ids": [
+        "R0023","R0026","R0027","R0030","R0038","R0078","R0079","R0088",
+        "R0089","R0093","R0097","R0098","R0099","R0121","R0122"
+      ],
+      "review_count": 15,
+      "representative_quotes": [
+        "desperately want give five star",
+        "great app relaxation mindfulnes content high quality",
+        "four star content two star usability",
+        "quite costly has stopp brin out many new story"
+      ],
+      "notes": "Reduced size and refined to only include genuinely mixed reviews. Removed purely negative or purely pricing-only reviews."
+    },
+    {
+      "group_id": "H2",
+      "group_theme": "Usability, Navigation, and Feature Issues",
+      "review_ids": [
+        "R0002","R0008","R0010","R0032","R0034","R0064","R0074","R0075",
+        "R0076","R0081","R0086","R0090","R0107","R0116","R0127"
+      ],
+      "review_count": 15,
+      "representative_quotes": [
+        "most annoy ux experience",
+        "please make search function better",
+        "app unnecessarily complex too many step",
+        "terrible search return too many result"
+      ],
+      "notes": "Refined to focus on UX/navigation issues only. Removed technical crash/performance issues and pricing related complaints."
+    },
     {
       "group_id": "H1",
-      "theme": "Workout logging failures during activity tracking",
-      "review_ids": ["rev_12", "rev_33", "rev_41", "rev_92"],
-      "example_reviews": [
-        "The app crashes whenever I try to log a run.",
-        "Logging workouts causes the app to freeze."
+      "group_theme": "Severe Negative Experiences (Bugs, Billing Errors, and Trust Issues)",
+      "review_ids": [
+        "R0001","R0004","R0007","R0020","R0025","R0067","R0072","R0077",
+        "R0091","R0094","R0096","R0102","R0110","R0112","R0124"
       ],
-      "notes": "Removed one unrelated review about login problems from the original automated group."
+      "review_count": 15,
+      "representative_quotes": [
+        "barely can do anyth dont subscribe",
+        "cancel subscription still charg annual fee",
+        "double charg then ignor all email",
+        "money grab app want purchase subscription right away"
+      ],
+      "notes": "Refocused on strong negative sentiment including bugs, billing failures, and trust issues. Removed overlap with usability only and pricing only complaints."
     }
   ]
 }

@@ -26,7 +26,7 @@ commands=(
     "requirement:\n{req}\n\n"
     "generate one test scenario in this using this format:\n\n"
     '{{'
-    '"test_id": "tc_auto_x",'
+    '"test_id": "T_auto_x",'
     '"requirement_id": "fr_auto_x",'
     '"scenario": "short description of validation",'
     '"steps": ["step 1", "step 2", "step 3"],'
@@ -61,7 +61,7 @@ def is_valid_test(test):
 
 def fallback_test(req,idx):
     return {
-        "test_id":f"tc_auto_{idx}",
+        "test_id":f"T_auto_{idx}",
         "requirement_id":req["requirement_id"],
         "scenario":f"validate {req['description']}",
         "steps":[
@@ -93,7 +93,7 @@ def generate_test(client,req,idx):
         print(f"something went wrong for {req['requirement_id']} ({e}) using backup")
         raw_output=f"error: {str(e)}"
         data=fallback_test(req,idx)
-    data["test_id"]=f"tc_auto_{idx}"
+    data["test_id"]=f"T_auto_{idx}"
     data["requirement_id"]=req["requirement_id"]
     return data,prompt,raw_output
 
@@ -108,9 +108,11 @@ def validate_coverage(requirements,tests):
 
 def save_tests(path,data):
     os.makedirs(os.path.dirname(path),exist_ok=True)
+    wrapped = {
+        "tests": data
+    }
     with open(path,"w",encoding="utf-8") as f:
-        json.dump(data,f,indent=2,ensure_ascii=False)
-
+        json.dump(wrapped,f,indent=2,ensure_ascii=False)
 
 def save_prompt_logs(path,data):
     os.makedirs(os.path.dirname(path),exist_ok=True)
@@ -167,7 +169,7 @@ def run():
         tests.append(test)
 
         prompt_logs.append({
-            "test_id":f"tc_auto_{i}",
+            "test_id":f"T_auto_{i}",
             "requirement_id":req["requirement_id"],
             "system_prompt":sys_prompt,
             "user_prompt":prompt,
@@ -178,7 +180,7 @@ def run():
         elapsed=time.time()-start_time
         avg=elapsed/i
         eta=avg*(len(requirements)-i)
-        print(f"tc_auto_{i} generating | eta: {eta:.1f}s")
+        print(f"T_auto_{i} generating | eta: {eta:.1f}s")
 
     validate_coverage(requirements,tests)
 

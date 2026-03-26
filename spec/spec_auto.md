@@ -1,59 +1,59 @@
 # Requirement ID: FR_auto_1
-- Description: [The system shall provide a curated list of relaxation and meditation resources, allowing users to discover new content within 30 seconds of launching the app.]
-- Source Persona: [Alexis Relax]
-- Traceability: [Derived from review group AG1]
-- Acceptance Criteria:[Given the user has launched the app, When the user navigates to the resource section, Then the system shall display a list of 10 relevant relaxation and meditation resources within 30 seconds, with a minimum of 80% of resources rated 4.5/5 by other users.]
+- Description: [The system shall provide a minimum of 50 diverse story options for relaxation and sleep aid within the first 30 days of use.]
+- Source Persona: [Alex Chen]
+- Traceability: [Derived from review group A1]
+- Acceptance Criteria:[Given the user has accessed the app, When the user navigates to the story library, Then the system shall display at least 50 story options, with a clear description of each story, within 2 seconds of navigation.]
 
 # Requirement ID: FR_auto_2
-- Description: [The system shall provide a curated list of relaxation and meditation resources within 3 seconds of loading the homepage for 90% of users.]
-- Source Persona: [Alexis Relax]
-- Traceability: [Derived from review group AG2]
-- Acceptance Criteria:[Given a user with a stable internet connection, When the user loads the homepage, Then the system shall display a list of 10 relevant relaxation and meditation resources within 3 seconds for 90% of users.]
+- Description: [The system shall provide a minimum of 50 diverse story options for relaxation and sleep aid within the app.]
+- Source Persona: [Alex Chen]
+- Traceability: [Derived from review group A2]
+- Acceptance Criteria:[Given the user has accessed the app's library section, When the user navigates to the story options menu, Then the system displays at least 50 different story options for relaxation and sleep aid, with clear descriptions and categorization.]
 
 # Requirement ID: FR_auto_3
-- Description: [The system shall provide a personalized relaxation program for 80% of users within 5 minutes of completing a stress assessment survey.]
-- Source Persona: [Emily Thompson]
-- Traceability: [Derived from review group AG3]
-- Acceptance Criteria:[{'given': 'The user has completed a stress assessment survey', 'when': 'The user requests a personalized relaxation program', 'then': "The system provides a tailored program within 5 minutes, with a minimum of 3 relaxation techniques recommended, and 90% of the recommended techniques are relevant to the user's stress assessment results"}]
+- Description: [The system shall stream video content without interruption for at least 95% of users.]
+- Source Persona: [A5-1]
+- Traceability: [Derived from review group A3]
+- Acceptance Criteria:[{'given': 'The user has a stable internet connection', 'when': 'The user initiates video playback', 'then': 'The video streams continuously without interruption for at least 95% of users, with a maximum of 2 buffering events per 10-minute playback period'}]
 
 # Requirement ID: FR_auto_4
-- Description: [The system shall provide a personalized relaxation program without requiring payment for users who have completed a minimum of 5 relaxation sessions within a 2-week period.]
-- Source Persona: [Emily Thompson]
-- Traceability: [Derived from review group AG4]
-- Acceptance Criteria:[{'given': 'A user has completed 5 relaxation sessions within a 2-week period', 'when': 'The user attempts to access a personalized relaxation program', 'then': 'The system provides the program without requiring payment'}]
+- Description: [The system shall stream video content without interruption for at least 95% of users.]
+- Source Persona: [A5-1]
+- Traceability: [Derived from review group A4]
+- Acceptance Criteria:[Given a stable internet connection, When a user initiates video playback, Then the video shall play continuously for at least 30 minutes without buffering or interruption for 95% of users.]
 
 # Requirement ID: FR_auto_5
-- Description: [The system shall provide a personalized sleep recommendation to help users fall asleep within 30 minutes of their desired bedtime for at least 80% of nights.]
-- Source Persona: [Alex]
-- Traceability: [Derived from review group AG5]
-- Acceptance Criteria:[Given a user has input their sleep schedule and preferences, When the user accesses the sleep recommendation feature, Then the system shall provide a tailored suggestion that results in the user falling asleep within 30 minutes of their desired bedtime for at least 80% of nights.]
+- Description: [The system shall provide access to relaxation content without requiring a subscription or payment.]
+- Source Persona: [A4-1 Frustrated Fiona]
+- Traceability: [Derived from review group A5]
+- Acceptance Criteria:[Given a user with a free account, When they navigate to the relaxation content section, Then they can access at least 10 free meditation sessions or relaxation exercises without being prompted to subscribe or pay.]
 
 # Requirement ID: FR_auto_6
-- Description: [The system shall provide a personalized sleep recommendation to help users fall asleep within 30 minutes of their desired bedtime for 80% of nights.]
-- Source Persona: [Alex]
-- Traceability: [Derived from review group AG6]
-- Acceptance Criteria:[Given a user has input their sleep schedule and preferences, When the user accesses the sleep recommendation feature, Then the system shall provide a tailored suggestion that results in the user falling asleep within 30 minutes of their desired bedtime for at least 80% of nights, as measured over a 2-week period.]
+- Description: [The system shall provide access to relaxation content without requiring a subscription or payment.]
+- Source Persona: [A4-1 Frustrated Fiona]
+- Traceability: [Derived from review group A6]
+- Acceptance Criteria:[Given a user with a free account, When they navigate to the relaxation content section, Then they can access at least 10 free relaxation tracks without being prompted to subscribe or pay.]
 
 # Requirement ID: FR_auto_7
-- Description: [The meditation app shall navigate to the meditation content within 3 seconds of selecting a meditation session for 90% of user interactions.]
-- Source Persona: [Alex Chen]
-- Traceability: [Derived from review group AG7]
-- Acceptance Criteria:[Given the user has logged in and selected a meditation session, When the user clicks on the session, Then the app shall display the meditation content within 3 seconds for 90% of user interactions.]
+- Description: [The system shall provide a search function that allows users to find sleep stories within 3 seconds for 90% of searches.]
+- Source Persona: [A3-001]
+- Traceability: [Derived from review group A7]
+- Acceptance Criteria:[Given the user is logged in and on the sleep story library page, When the user types a keyword in the search bar, Then the system shall display relevant sleep story results within 3 seconds for 90% of searches.]
 
 # Requirement ID: FR_auto_8
-- Description: [The meditation app shall navigate to the meditation content within 3 seconds of selecting a meditation session for 90% of user interactions.]
-- Source Persona: [Alex Chen]
-- Traceability: [Derived from review group AG8]
-- Acceptance Criteria:[Given the user has a stable internet connection, When the user selects a meditation session, Then the app shall display the meditation content within 3 seconds for 90% of user interactions.]
+- Description: [The system shall provide a search function that allows users to find sleep stories within 3 seconds for 90% of searches.]
+- Source Persona: [A3-001]
+- Traceability: [Derived from review group A8]
+- Acceptance Criteria:[Given the user is logged in and on the sleep story library page, When the user types a keyword in the search bar, Then the system shall display relevant sleep story results within 3 seconds for 90% of searches.]
 
 # Requirement ID: FR_auto_9
-- Description: [The system shall clearly display all subscription fees and charges before a user confirms their payment.]
-- Source Persona: [AG1-P1]
-- Traceability: [Derived from review group AG9]
-- Acceptance Criteria:[Given the user is on the payment page, When they select a subscription plan, Then they shall see a detailed breakdown of all fees and charges with a total cost, within 1 second of plan selection, for 100% of cases.]
+- Description: [The system shall provide a selection of at least 20 free relaxation meditation sessions without requiring a paid subscription.]
+- Source Persona: [A1-P1]
+- Traceability: [Derived from review group A9]
+- Acceptance Criteria:[{'given': 'The user has accessed the relaxation tool', 'when': 'The user navigates to the meditation session library', 'then': 'The user is presented with a list of at least 20 free meditation sessions, with clear descriptions and durations, and no request for payment information is made.'}]
 
 # Requirement ID: FR_auto_10
-- Description: [The system shall clearly display all charges and fees associated with a subscription before the user commits to a payment.]
-- Source Persona: [AG1-P1]
-- Traceability: [Derived from review group AG10]
-- Acceptance Criteria:[{'given': 'The user is on the subscription payment page', 'when': 'The user selects a subscription plan', 'then': 'The system displays a detailed breakdown of all charges, including any additional fees, taxes, or recurring payments, with a total cost clearly highlighted.'}]
+- Description: [The system shall provide a selection of at least 20 free relaxation meditation sessions without requiring payment or subscription.]
+- Source Persona: [A1-P1]
+- Traceability: [Derived from review group A10]
+- Acceptance Criteria:[Given a user with no payment or subscription, When they access the relaxation meditation section, Then they can choose from at least 20 free meditation sessions.]
