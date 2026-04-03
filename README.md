@@ -4,6 +4,8 @@ ID: com.calm.android
 Company: Calm.com, Inc.
 Packages needed: see requirements.txt
 
+This project implements three pipelines (manual, automated, hybrid) to transform user reviews into personas, specifications, tests, and metrics.
+
 ## Dataset:
 ```
 - ./data/reviews_raw.jsonl        Contains the collected reviews
@@ -65,6 +67,33 @@ After you have properly configured everything you may continue to the steps belo
 1. Run the program by either entering python src/run_all.py in a terminal connected to root or run run_all.py on an IDE (I simplified all the steps to run every task)
 2. After running the program you should have validated all your files and ran all the tasks needed
 3. Open metrics/metrics_summary.json for comparison results
+
+#### These are the steps it takes when it runs the run_all.py:
+
+Step 1: Validate repository structure
+
+Step 2: Collect or load raw dataset
+
+Step 3: Clean dataset
+
+Step 4: Generate personas automatically
+
+Step 5: Generate specifications
+
+Step 6: Generate validation tests
+
+Step 7: Compute metrics
+
+## Expected Outputs
+
+After running run_all.py, the following files will be generated:
+
+- data/reviews_clean.jsonl
+- data/review_groups_auto.json
+- personas/personas_auto.json
+- spec/spec_auto.md
+- tests/tests_auto.json
+- metrics/metrics_auto.json
 
 ## LLM Model Disclaimer
 All autogeneration details and info used the Groq API with model:
