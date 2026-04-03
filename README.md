@@ -24,11 +24,31 @@ Packages needed: see requirements.txt
 ```
 
 ## Setting Up Your System
-Before even attempting to run the system, please make sure you have Python installed and the packages required to run this system:
+#### Before even attempting to run the system, please make sure you have Python installed and the packages required to run this system:
 
 ```pip install -r requirements.txt```
 
-After you have the dependencies installed, please create a file called ```.env``` at root and insert the key as this format:
+or
+
+```pip install groq google-play-scraper```
+
+#### After you have the dependencies installed, please set the GROQ API KEY like so"
+
+Windows 10/11 Command Prompt:
+
+```set GROQ_API_KEY=gsk_your__key_here```
+
+Windows 10/11 Powershell:
+
+```$env:GROQ_API_KEY = "gsk_your_actual_key_here"```
+
+MAC-OS/Linux:
+
+```export GROQ_API_KEY="gsk_your_actual_key_here"```
+
+
+
+#### Alternatively, to save time if you have issues, create a file called ```.env``` at root and insert the key as this format:
 ```
 #Create a .env (exact name) and put GROQ_API_KEY below 
 <key goes here - make sure your key is exactly the key give by Groq>

@@ -2,19 +2,46 @@
 import json, os, sys, re, time
 from groq import Groq
 
-root=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-spec_path=os.path.join(root,"spec","spec_auto.md")
-output_path=os.path.join(root,"tests","tests_auto.json")
-prompt_path=os.path.join(root,"prompts","prompt_auto.json")
-model_id="meta-llama/llama-4-scout-17b-16e-instruct"
+root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+spec_path = os.path.join(root, "spec", "spec_auto.md")
+output_path = os.path.join(root, "tests", "tests_auto.json")
+prompt_path = os.path.join(root, "prompts", "prompt_auto.json")
 
-env=os.path.join(root,".env")
-if os.path.exists(env):
-    lines=[l.strip() for l in open(env) if l.strip()]
-    if len(lines)>=2:
-        os.environ["groq_api_key"]=lines[1]
+model_id = "meta-llama/llama-4-scout-17b-16e-instruct"
+env = os.path.join(root, ".env")
 
-sys_prompt=(
+print("Checking for GROQ_API_KEY...")
+
+# check env first
+key = os.environ.get("GROQ_API_KEY")
+
+# check .env file
+if not key and os.path.exists(env):
+    print("   Checking .env file...")
+    lines = [l.strip() for l in open(env, encoding="utf-8") if l.strip()]
+    if len(lines) >= 2:
+        for line in lines:
+            if line.startswith("GROQ_API_KEY="):
+                key = line.split("=", 1)[1].strip().strip('"\'')
+                break
+        if not key:
+            key = lines[1]
+
+# ask user if needed
+if not key:
+    print("\nGROQ_API_KEY not found.")
+    print("   Use: export GROQ_API_KEY=\"your_key_here\"")
+    key_input = input("Enter your Groq API key: ").strip()
+    if key_input:
+        key = key_input
+    else:
+        sys.exit("No API key provided.")
+else:
+    print("   API key found.")
+
+os.environ["GROQ_API_KEY"] = key
+
+sys_prompt = (
     "generate a validation test scenario.\n"
     "ensure:\n"
     "- steps are clear and workable\n"
@@ -22,7 +49,7 @@ sys_prompt=(
     "- output is valid json\n"
 )
 
-commands=(
+commands = (
     "requirement:\n{req}\n\n"
     "generate one test scenario in this using this format:\n\n"
     '{{'
@@ -36,161 +63,148 @@ commands=(
 
 
 def extract_requirements(md_text):
-    blocks=md_text.split("# Requirement ID:")
-    reqs=[]
+    blocks = md_text.split("# Requirement ID:")
+    reqs = []
     for b in blocks[1:]:
-        rid_match=re.search(r"(fr_auto_\d+)",b,re.IGNORECASE)
-        desc_match=re.search(r"description:\s*\[(.*?)\]",b,re.IGNORECASE)
+        rid_match = re.search(r"(fr_auto_\d+)", b, re.IGNORECASE)
+        desc_match = re.search(r"description:\s*\[(.*?)\]", b, re.IGNORECASE)
         if rid_match:
             reqs.append({
-                "requirement_id":rid_match.group(1),
-                "description":(desc_match.group(1) if desc_match else "").strip()
+                "requirement_id": rid_match.group(1),
+                "description": (desc_match.group(1) if desc_match else "").strip()
             })
     return reqs
 
 
 def is_valid_test(test):
-    required=["test_id","requirement_id","scenario","steps","expected_result"]
+    required = ["test_id", "requirement_id", "scenario", "steps", "expected_result"]
     for f in required:
         if f not in test:
             return False
-    if not isinstance(test["steps"],list) or len(test["steps"])<2:
+    if not isinstance(test["steps"], list) or len(test["steps"]) < 2:
         return False
     return True
 
 
-def fallback_test(req,idx):
+def fallback_test(req, idx):
     return {
-        "test_id":f"T_auto_{idx}",
-        "requirement_id":req["requirement_id"],
-        "scenario":f"validate {req['description']}",
-        "steps":[
+        "test_id": f"T_auto_{idx}",
+        "requirement_id": req["requirement_id"],
+        "scenario": f"validate {req['description']}",
+        "steps": [
             "initialize system",
             f"execute function related to: {req['description']}",
             "capture system response"
         ],
-        "expected_result":f"system satisfies requirement: {req['description']}"
+        "expected_result": f"system satisfies requirement: {req['description']}"
     }
 
 
-def generate_test(client,req,idx):
-    prompt=commands.format(req=json.dumps(req,indent=2))
+def generate_test(client, req, idx):
+    prompt = commands.format(req=json.dumps(req, indent=2))
     try:
-        res=client.chat.completions.create(
+        res = client.chat.completions.create(
             model=model_id,
             messages=[
-                {"role":"system","content":sys_prompt},
-                {"role":"user","content":prompt}
+                {"role": "system", "content": sys_prompt},
+                {"role": "user", "content": prompt}
             ],
             temperature=0.2,
-            response_format={"type":"json_object"}
+            response_format={"type": "json_object"}
         )
-        raw_output=res.choices[0].message.content
-        data=json.loads(raw_output)
+        data = json.loads(res.choices[0].message.content)
         if not is_valid_test(data):
             raise ValueError("invalid structure")
     except Exception as e:
-        print(f"something went wrong for {req['requirement_id']} ({e}) using backup")
-        raw_output=f"error: {str(e)}"
-        data=fallback_test(req,idx)
-    data["test_id"]=f"T_auto_{idx}"
-    data["requirement_id"]=req["requirement_id"]
-    return data,prompt,raw_output
+        print(f"something went wrong for {req['requirement_id']}, using backup")
+        data = fallback_test(req, idx)
+
+    data["test_id"] = f"T_auto_{idx}"
+    data["requirement_id"] = req["requirement_id"]
+    return data, prompt, str(res.choices[0].message.content) if 'res' in locals() else "error"
 
 
-def validate_coverage(requirements,tests):
-    req_ids={r["requirement_id"] for r in requirements}
-    tested_ids={t["requirement_id"] for t in tests}
-    missing=req_ids-tested_ids
-    if missing:
-        raise ValueError(f"missing tests for: {missing}")
+def save_tests(path, data):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    wrapped = {"tests": data}
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(wrapped, f, indent=2, ensure_ascii=False)
 
 
-def save_tests(path,data):
-    os.makedirs(os.path.dirname(path),exist_ok=True)
-    wrapped = {
-        "tests": data
-    }
-    with open(path,"w",encoding="utf-8") as f:
-        json.dump(wrapped,f,indent=2,ensure_ascii=False)
-
-def save_prompt_logs(path,data):
-    os.makedirs(os.path.dirname(path),exist_ok=True)
+def save_prompt_logs(path, data):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
     if os.path.exists(path):
         try:
-            with open(path,encoding="utf-8") as f:
-                existing=json.load(f)
-            if not isinstance(existing,list):
-                existing=[]
+            with open(path, encoding="utf-8") as f:
+                existing = json.load(f)
+            if not isinstance(existing, list):
+                existing = []
         except:
-            print("failed to load existing prompt logs, stopping edits")
+            print("failed to load existing prompt logs")
             return
     else:
-        existing=[]
+        existing = []
 
     def key(x):
-        return (x.get("requirement_id"),x.get("user_prompt"),x.get("model"))
+        return (x.get("requirement_id"), x.get("user_prompt"), x.get("model"))
 
-    existing_keys={key(x) for x in existing}
-    new_unique=[x for x in data if key(x) not in existing_keys]
+    existing_keys = {key(x) for x in existing}
+    new_unique = [x for x in data if key(x) not in existing_keys]
     existing.extend(new_unique)
 
-    with open(path,"w",encoding="utf-8") as f:
-        json.dump(existing,f,indent=2,ensure_ascii=False)
-
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(existing, f, indent=2, ensure_ascii=False)
     print(f"appended {len(new_unique)} new test prompt logs")
 
 
 def run():
-    key=os.environ.get("groq_api_key")
+    key = os.environ.get("GROQ_API_KEY")
     if not key:
-        sys.exit("missing api key, ensure .env exists")
+        sys.exit("missing api key")
 
     if not os.path.exists(spec_path):
         sys.exit("missing spec_auto.md")
 
-    client=Groq(api_key=key)
+    client = Groq(api_key=key)
 
-    with open(spec_path,encoding="utf-8") as f:
-        md_text=f.read()
+    with open(spec_path, encoding="utf-8") as f:
+        md_text = f.read()
 
-    requirements=extract_requirements(md_text)
+    requirements = extract_requirements(md_text)
     print(f"found {len(requirements)} requirements")
 
     if not requirements:
         sys.exit("no requirements found")
 
-    tests=[]
-    prompt_logs=[]
-    start_time=time.time()
+    tests = []
+    prompt_logs = []
+    start_time = time.time()
 
-    for i,req in enumerate(requirements,1):
-        test,prompt,response=generate_test(client,req,i)
+    for i, req in enumerate(requirements, 1):
+        test, prompt, response = generate_test(client, req, i)
         tests.append(test)
-
         prompt_logs.append({
-            "test_id":f"T_auto_{i}",
-            "requirement_id":req["requirement_id"],
-            "system_prompt":sys_prompt,
-            "user_prompt":prompt,
-            "response":response,
-            "model":model_id
+            "test_id": f"T_auto_{i}",
+            "requirement_id": req["requirement_id"],
+            "system_prompt": sys_prompt,
+            "user_prompt": prompt,
+            "response": response,
+            "model": model_id
         })
 
-        elapsed=time.time()-start_time
-        avg=elapsed/i
-        eta=avg*(len(requirements)-i)
-        print(f"T_auto_{i} generating | eta: {eta:.1f}s")
+        elapsed = time.time() - start_time
+        avg = elapsed / i
+        eta = avg * (len(requirements) - i)
+        print(f"T_auto_{i} generated | ETA: {eta:.1f}s")
 
-    validate_coverage(requirements,tests)
+    # final checks and save
+    save_tests(output_path, tests)
+    save_prompt_logs(prompt_path, prompt_logs)
 
-    total_time=time.time()-start_time
-    save_tests(output_path,tests)
-    save_prompt_logs(prompt_path,prompt_logs)
-
+    total_time = time.time() - start_time
     print(f"\nsaved -> {output_path}")
     print(f"total time: {total_time:.2f}s")
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     run()

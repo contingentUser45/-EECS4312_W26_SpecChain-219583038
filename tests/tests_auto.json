@@ -3,118 +3,132 @@
     {
       "test_id": "T_auto_1",
       "requirement_id": "FR_auto_1",
-      "scenario": "Validate diverse story options for relaxation and sleep aid within the first 30 days of use",
+      "scenario": "Launch app and access guided meditation session without login or subscription within 30 seconds",
       "steps": [
-        "Launch the application and simulate 30 days of use",
-        "Navigate to the relaxation and sleep aid section",
-        "Retrieve and count the number of diverse story options available"
+        "Launch the meditation app",
+        "Verify the app's main screen is displayed",
+        "Select the option to start a guided meditation session",
+        "Verify the guided meditation session starts within 30 seconds"
       ],
-      "expected_result": "The system provides a minimum of 50 diverse story options for relaxation and sleep aid"
+      "expected_result": "The guided meditation session begins playing within 30 seconds of launching the app, without prompting for login or subscription"
     },
     {
       "test_id": "T_auto_2",
       "requirement_id": "FR_auto_2",
-      "scenario": "Validate the system provides a minimum of 50 diverse story options for relaxation and sleep aid",
+      "scenario": "Validate guided meditation session accessibility from home screen",
       "steps": [
-        "Launch the app and navigate to the relaxation and sleep aid section",
-        "Retrieve the list of available story options",
-        "Count the number of unique story options"
+        "Navigate to the home screen",
+        "Access the meditation sessions menu",
+        "Select a guided meditation session"
       ],
-      "expected_result": "The system provides at least 50 unique story options for relaxation and sleep aid"
+      "expected_result": "The guided meditation session starts playing within 3 navigation steps"
     },
     {
       "test_id": "T_auto_3",
       "requirement_id": "FR_auto_3",
-      "scenario": "Validate video streaming uptime for multiple users",
+      "scenario": "Validate navigation menu accessibility within 3 clicks",
       "steps": [
-        "Simulate 100 concurrent users streaming video content for 1 hour",
-        "Monitor and record the number of users experiencing video interruptions",
-        "Calculate the percentage of users with uninterrupted video streaming"
+        "Log in to the system",
+        "Access the main navigation menu",
+        "Navigate to a main feature (e.g., user management) in 3 clicks or less"
       ],
-      "expected_result": "At least 95% of users stream video content without interruption"
+      "expected_result": "The main feature (e.g., user management) is displayed and accessible within 3 clicks from the main navigation menu"
     },
     {
       "test_id": "T_auto_4",
       "requirement_id": "FR_auto_4",
-      "scenario": "Validate video streaming uptime for a large number of users",
+      "scenario": "Validate navigation to shopping cart within 3 clicks from any product page",
       "steps": [
-        "Simulate 1000 concurrent users streaming video content for 1 hour",
-        "Monitor and record the number of users experiencing video interruptions",
-        "Calculate the percentage of users streaming without interruption"
+        "Navigate to a product page",
+        "Click on a product to view details",
+        "Click on the 'Add to Cart' button",
+        "Click on the 'View Cart' button"
       ],
-      "expected_result": "At least 95% of users stream video content without interruption"
+      "expected_result": "The system navigates to the shopping cart page and displays the added product"
     },
     {
       "test_id": "T_auto_5",
       "requirement_id": "FR_auto_5",
-      "scenario": "Access relaxation content without subscription or payment",
+      "scenario": "Validate uninterrupted relaxation sessions for users",
       "steps": [
-        "Launch the application",
-        "Navigate to the relaxation content section",
-        "Select a relaxation content item (e.g., a meditation video or calming music track)"
+        "Simulate 100 user sessions with relaxation mode enabled",
+        "Introduce random interruptions (max 2 per session) with duration (max 30 seconds) during the sessions for 15 users",
+        "Measure the number of uninterrupted sessions and interruptions per session for the remaining 85 users"
       ],
-      "expected_result": "The selected relaxation content item plays without prompting for subscription or payment details"
+      "expected_result": {
+        "uninterrupted_sessions_percentage": 85,
+        "max_interruptions_per_session": 2,
+        "max_interruption_duration": 30
+      }
     },
     {
       "test_id": "T_auto_6",
       "requirement_id": "FR_auto_6",
-      "scenario": "Access relaxation content without subscription or payment",
+      "scenario": "Validate uninterrupted relaxation session for 30 minutes",
       "steps": [
-        "Launch the application",
-        "Navigate to the relaxation content section",
-        "Select a relaxation content item (e.g. a meditation video)"
+        "Start a relaxation session",
+        "Wait for 30 minutes without any interactions",
+        "Verify no unexpected interruptions or alerts occur during the session"
       ],
-      "expected_result": "The selected relaxation content item plays without prompting for subscription or payment details"
+      "expected_result": "The relaxation session completes without any interruptions or alerts for the full 30 minutes"
     },
     {
       "test_id": "T_auto_7",
       "requirement_id": "FR_auto_7",
-      "scenario": "Validate search function response time",
+      "scenario": "Validate upfront display of all costs associated with a subscription",
       "steps": [
-        "Login to the system",
-        "Navigate to the search function",
-        "Enter a valid search query for a sleep story",
-        "Initiate the search",
-        "Measure the response time"
+        "Navigate to the subscription purchase page",
+        "Select a subscription plan",
+        "Review the displayed costs and breakdown of charges"
       ],
-      "expected_result": "The search results are displayed within 3 seconds"
+      "expected_result": "The system displays a clear and detailed breakdown of all costs associated with the subscription, including no hidden fees, in a transparent and easily understandable format."
     },
     {
       "test_id": "T_auto_8",
       "requirement_id": "FR_auto_8",
-      "scenario": "Validate search function response time",
+      "scenario": "Validate clear display of subscription costs during onboarding",
       "steps": [
-        "Login to the system",
-        "Navigate to the search function",
-        "Enter a valid search query for a sleep story",
-        "Record the time taken for the search results to load",
-        "Repeat steps 3-4 for a total of 100 searches"
+        "Initiate the onboarding process for a new subscription",
+        "Select a subscription plan and proceed to the payment details page",
+        "Review the costs and fees associated with the subscription"
       ],
-      "expected_result": "At least 90% of searches return results within 3 seconds"
+      "expected_result": "The system displays a detailed breakdown of all costs, including any potential hidden fees, in a clear and readable format."
     },
     {
       "test_id": "T_auto_9",
       "requirement_id": "FR_auto_9",
-      "scenario": "Validate availability of free relaxation meditation sessions",
+      "scenario": "Validate guided relaxation session helps users fall asleep within 20 minutes",
       "steps": [
-        "Launch the application and navigate to the meditation sessions section",
-        "Verify that there is a section or category for free relaxation meditation sessions",
-        "Count the number of free relaxation meditation sessions available without a paid subscription"
+        "Start a new guided relaxation session",
+        "Begin timer to track session duration",
+        "Follow the guided relaxation session instructions",
+        "Indicate when the user falls asleep (e.g., via a 'fallen asleep' button)"
       ],
-      "expected_result": "There are at least 20 free relaxation meditation sessions available without requiring a paid subscription"
+      "expected_result": "The user falls asleep within 20 minutes of starting the session, and the system records the session duration as less than or equal to 20 minutes."
     },
     {
       "test_id": "T_auto_10",
       "requirement_id": "FR_auto_10",
-      "scenario": "Validate availability of free relaxation meditation sessions",
+      "scenario": "Validation of guided relaxation session effectiveness",
       "steps": [
-        "Launch the application and navigate to the meditation sessions section",
-        "Identify and count the number of free relaxation meditation sessions available",
-        "Verify that no payment or subscription is required to access these sessions"
+        "User starts a guided relaxation session",
+        "User uses the session at least 3 times a week for a period of 2 weeks",
+        "Track and record the number of sessions where user falls asleep within 30 minutes",
+        "Calculate the success rate of falling asleep within 30 minutes"
       ],
       "expected_result": {
-        "number_of_free_sessions": 20,
-        "no_payment_required": true
+        "success_rate": {
+          "value": 80,
+          "unit": "%"
+        },
+        "sessions": {
+          "min_sessions_per_week": 3,
+          "total_weeks": 2
+        },
+        "output": {
+          "success": true,
+          "message": "The system provides a guided relaxation session with an 80% success rate of users falling asleep within 30 minutes"
+        }
       }
     }
   ]

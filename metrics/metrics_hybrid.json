@@ -1,6 +1,6 @@
 {
   "pipeline": "hybrid",
-  "dataset_size": 1678,
+  "dataset_size": 1679,
   "persona_count": 5,
   "requirements_count": 10,
   "tests_count": 10,

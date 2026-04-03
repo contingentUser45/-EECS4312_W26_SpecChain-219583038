@@ -181,16 +181,6 @@ def compute(mode):
     grouped_ids=extract_group_ids(review_groups)
     intersection=dataset_ids&grouped_ids
 
-    print("\n--- SANITY CHECK ---")
-    print("req_ids:",list(requirement_ids)[:5])
-    print("test_ids:",list(tested_ids)[:5])
-    print("personas:",list(valid_persona_ids))
-    miss_t=[r["id"] for r in requirements if normalize_req_id(r["id"]) not in tested_ids]
-    miss_p=[(r["id"],r["persona"],normalize_persona_id(r["persona"],name_map)) for r in requirements if normalize_persona_id(r["persona"],name_map) not in valid_persona_ids]
-    print("missing test:",len(miss_t))
-    print("missing persona:",len(miss_p))
-    print("persona examples:",miss_p[:5])
-
     metrics={
         "pipeline":mode,
         "dataset_size":qc,
