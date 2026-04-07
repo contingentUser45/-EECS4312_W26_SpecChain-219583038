@@ -10,7 +10,7 @@
       "review_coverage": 1.0,
       "traceability_ratio": 1.0,
       "testability_rate": 1.0,
-      "ambiguity_ratio": 0.2
+      "ambiguity_ratio": 0.0
     },
     {
       "pipeline": "hybrid",
@@ -41,12 +41,12 @@
     "review_coverage": "auto",
     "traceability_ratio": "auto",
     "testability_rate": "auto",
-    "ambiguity_ratio": "manual"
+    "ambiguity_ratio": "auto"
   },
   "scores": {
-    "auto": 3,
+    "auto": 4,
     "hybrid": 0,
-    "manual": 1
+    "manual": 0
   },
   "overall_winner": "auto"
 }

@@ -1,99 +1,100 @@
 [
   {
-    "persona_id": "A2-001",
-    "name": "Lena Wellness",
-    "age_range": "25-45",
-    "occupation": "Yoga Instructor",
-    "context": "Seeking relaxation and mindfulness tools",
+    "persona_id": 1,
+    "name": "Alex Chen",
+    "age_range": "25-34",
+    "occupation": "Student/Part-time worker",
+    "context": "Overwhelmed with daily life, stress, and anxiety; seeking relaxation and mindfulness",
     "goals": [
       "Improve sleep quality",
-      "Reduce stress",
+      "Reduce stress and anxiety",
       "Increase mindfulness"
     ],
     "pain_points": [
-      "Difficulty finding effective relaxation techniques",
-      "Frustrated with expensive apps",
-      "Seeking variety in meditation and sleep content"
+      "Difficulty navigating complex apps",
+      "Frustrated with lack of valuable content",
+      "Concerns about subscription costs",
+      "Dislikes being misled by advertising"
     ],
-    "tech_comfort": "High",
-    "quote": "I love how this app helps me unwind, but I wish it was more affordable.",
-    "group_theme": "Wellness Enthusiasts"
+    "tech_comfort": "Intermediate",
+    "quote": "I just want an app that helps me relax without making me jump through hoops.",
+    "group_theme": "Disappointed with misleading ads and complex apps, seeking simplicity and effectiveness in mindfulness and relaxation tools."
   },
   {
-    "persona_id": "A5-1",
-    "name": "Alex Chen",
+    "persona_id": 1,
+    "name": "Frustrated Fiona",
+    "age_range": "25-44",
+    "occupation": "Working Professional",
+    "context": "Fiona is a busy professional who tries to use music streaming apps to relax and enjoy her favorite songs. However, her experience with A5 has been marred by numerous issues.",
+    "goals": [
+      "To easily access and play her favorite music",
+      "To have a seamless and enjoyable user experience"
+    ],
+    "pain_points": [
+      "Poor tech support",
+      "Frequent app crashes and slow loading times",
+      "Unwanted charges and difficult cancellation process",
+      "Cluttered and awkward user interface"
+    ],
+    "tech_comfort": "Moderate",
+    "quote": "It's unbelievable how awkward and frustrating this app is to use.",
+    "group_theme": "Frustration with A5's functionality and customer support"
+  },
+  {
+    "persona_id": "A4-1",
+    "name": "Emily W.",
     "age_range": "25-45",
-    "occupation": "Marketing Specialist",
-    "context": "Struggling to manage stress and sleep with a busy schedule",
+    "occupation": "Working Professional",
+    "context": "High stress levels, seeking mental wellness and relaxation techniques",
+    "goals": [
+      "Reduce stress and anxiety",
+      "Improve sleep quality",
+      "Establish a daily meditation practice"
+    ],
+    "pain_points": [
+      "Difficulty finding time for self-care",
+      "Struggling with stress and anxiety",
+      "Hard to navigate wellness apps"
+    ],
+    "tech_comfort": "Highly comfortable with technology, uses apps daily",
+    "quote": "This app has been a literal lifesaver on stressful workdays. I love how short and sweet the daily activities are.",
+    "group_theme": "Mindful Moments"
+  },
+  {
+    "persona_id": "A3-001",
+    "name": "Serenity",
+    "age_range": "25-45",
+    "occupation": "Working professional",
+    "context": "Experiences stress and anxiety, seeks relaxation and calmness",
+    "goals": [
+      "Reduce stress and anxiety",
+      "Improve mental well-being"
+    ],
+    "pain_points": [
+      "Limited free content",
+      "Aggressive monetization",
+      "Difficulty canceling subscription"
+    ],
+    "tech_comfort": "Moderate",
+    "quote": "I just want to feel calm and relaxed, without being nickel-and-dimed",
+    "group_theme": "Calmness and relaxation"
+  },
+  {
+    "persona_id": "A1-P1",
+    "name": "Serenity",
+    "age_range": "25-45",
+    "occupation": "Creative Professional",
+    "context": "Struggles with stress and insomnia, seeking relaxation techniques",
     "goals": [
       "Improve sleep quality",
       "Reduce stress and anxiety"
     ],
     "pain_points": [
-      "Difficulties navigating the app",
-      "Frustrating UX experience",
-      "Inability to easily find and play favorite content"
+      "Difficulty falling asleep due to racing mind",
+      "Wakes up frequently during the night"
     ],
-    "tech_comfort": "Intermediate",
-    "quote": "I just want to be able to relax and fall asleep without having to manually stop the app every time.",
-    "group_theme": "Frustrated Sleep Seeker"
-  },
-  {
-    "persona_id": "A4-1",
-    "name": "Frustrated Fiona",
-    "age_range": "25-45",
-    "occupation": "Working professional",
-    "context": "High stress levels, seeking relaxation and calmness",
-    "goals": [
-      "Find a reliable and affordable relaxation tool",
-      "Effectively manage stress and anxiety"
-    ],
-    "pain_points": [
-      "Aggressive paywalls",
-      "Poor tech support",
-      "Frustrating onboarding process",
-      "Unexpected charges"
-    ],
-    "tech_comfort": "Moderate",
-    "quote": "I just want to calm down, not fight with an app",
-    "group_theme": "Frustration with monetization strategies"
-  },
-  {
-    "persona_id": "A3-001",
-    "name": "Alex Chen",
-    "age_range": "25-35",
-    "occupation": "Marketing Specialist",
-    "context": "Busy professional with a demanding work schedule, looking for ways to manage stress and improve mental well-being",
-    "goals": [
-      "Reduce stress and anxiety",
-      "Improve sleep quality",
-      "Increase mindfulness and relaxation"
-    ],
-    "pain_points": [
-      "Difficulty sleeping due to stress and anxiety",
-      "Limited time for self-care and relaxation",
-      "Frustration with expensive subscription models"
-    ],
-    "tech_comfort": "High",
-    "quote": "Calm has been a literal lifesaver. I use it daily to manage stress and anxiety.",
-    "group_theme": "Health and Wellness"
-  },
-  {
-    "persona_id": "A1-P1",
-    "name": "Alex Chen",
-    "age_range": "25-45",
-    "occupation": "Marketing Manager",
-    "context": "High-stress professional",
-    "goals": [
-      "Relax and reduce stress",
-      "Improve sleep quality"
-    ],
-    "pain_points": [
-      "Difficulty sleeping due to stress",
-      "Feeling overwhelmed and anxious"
-    ],
-    "tech_comfort": "Highly tech-savvy",
-    "quote": "I just love listening to ocean waves, it's so soothing.",
+    "tech_comfort": "Highly tech-savvy, uses apps and digital tools to manage stress and sleep",
+    "quote": "I love listening to ocean waves, it's so soothing.",
     "group_theme": "Relaxation and Sleep"
   }
 ]

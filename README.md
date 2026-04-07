@@ -100,3 +100,4 @@ All autogeneration details and info used the Groq API with model:
 meta-llama/llama-4-scout-17b-16e-instruct
 
 ### WARNING! IF YOU ARE MISSING FILES THE SYSTEM WILL HALT OPERATION UNTIL YOU REGAIN ALL FILES
+#### Note, Metric summaries may vary due to testing. System will automatically retry when encountering errors.

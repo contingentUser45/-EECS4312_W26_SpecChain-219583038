@@ -3,205 +3,210 @@
     {
       "test_id": "T_auto_1a",
       "requirement_id": "FR_auto_1",
-      "scenario": "Validate free meditation sessions for non-subscribed users",
+      "scenario": "Valid launch and immediate meditation guidance",
       "steps": [
         "Launch the Calm app",
-        "Verify the user is not logged in or subscribed",
-        "Navigate to the meditation sessions library"
+        "Verify the app's main screen loads",
+        "Start a new meditation session"
       ],
-      "expected_result": "The user can access at least 50 free meditation sessions"
+      "expected_result": "The meditation session guidance begins within 30 seconds of launching the app"
     },
     {
       "test_id": "T_auto_1b",
       "requirement_id": "FR_auto_1",
-      "scenario": "Verify the monthly limit of free meditation sessions",
+      "scenario": "Edge case: App launch and meditation guidance on slower devices",
       "steps": [
+        "Simulate a slower device by throttling the CPU",
         "Launch the Calm app",
-        "Verify the user is not logged in or subscribed",
-        "Access 50 free meditation sessions",
-        "Attempt to access one more session"
+        "Verify the app's main screen loads",
+        "Start a new meditation session"
       ],
-      "expected_result": "The user is prevented from accessing more than 50 free meditation sessions per month and is prompted to subscribe"
+      "expected_result": "The meditation session guidance begins within 30 seconds of launching the app, even on slower devices"
     },
     {
       "test_id": "T_auto_2a",
       "requirement_id": "FR_auto_2",
-      "scenario": "Validate free trial period for new users",
+      "scenario": "Valid launch with immediate meditation session",
       "steps": [
-        "Launch the Calm app and navigate to the sign-up page",
-        "Sign up for a new account with a valid email address and password",
-        "Complete the onboarding process and access the premium content section"
+        "Launch Calm app",
+        "Wait for 30 seconds",
+        "Verify the app is guiding the user through a meditation session"
       ],
-      "expected_result": "The app offers a free trial period of at least 7 days for new users to access premium meditation and sleep content"
+      "expected_result": "The app starts guiding the user through a meditation session within 30 seconds of launch"
     },
     {
       "test_id": "T_auto_2b",
       "requirement_id": "FR_auto_2",
-      "scenario": "Verify trial period duration",
+      "scenario": "Edge case: App launch and meditation session start at 29 seconds",
       "steps": [
-        "Launch the Calm app and navigate to the account settings page",
-        "Verify the trial period start date and calculate the end date",
-        "Check if the premium content remains accessible during the trial period"
+        "Launch Calm app",
+        "Record the timestamp when the app launches",
+        "Wait until 29 seconds have passed since launch",
+        "Verify the app is guiding the user through a meditation session"
       ],
-      "expected_result": "The trial period is at least 7 days long and the premium content is accessible during this time"
+      "expected_result": "The app starts guiding the user through a meditation session at or before 30 seconds after launch"
     },
     {
       "test_id": "T_auto_3a",
       "requirement_id": "FR_auto_3",
-      "scenario": "Auto-stop after 30 minutes of inactivity",
+      "scenario": "Valid meditation session selection screen load within 3 seconds",
       "steps": [
-        "Launch the Calm app and start playing a meditation session",
-        "Simulate 29 minutes of inactivity (e.g., no interactions, no screen changes)",
-        "Simulate 2 minutes of inactivity (i.e., 31 minutes total inactivity)"
+        "Launch the Calm app",
+        "Ensure the app is updated to the latest version",
+        "Tap on the 'Meditate' button"
       ],
-      "expected_result": "The meditation session stops playing automatically"
+      "expected_result": "The meditation session selection screen loads within 3 seconds"
     },
     {
       "test_id": "T_auto_3b",
       "requirement_id": "FR_auto_3",
-      "scenario": "Content continues playing if user interacts within 30 minutes",
+      "scenario": "Verify 90% of requests load within 3 seconds",
       "steps": [
-        "Launch the Calm app and start playing a sleep story",
-        "Simulate 25 minutes of inactivity",
-        "Simulate a user interaction (e.g., pause and resume the session)",
-        "Simulate an additional 5 minutes of inactivity"
+        "Simulate 100 requests to load the meditation session selection screen",
+        "Measure the load time for each request",
+        "Calculate the percentage of requests that load within 3 seconds"
       ],
-      "expected_result": "The sleep story continues playing after the interaction and does not stop automatically"
+      "expected_result": "At least 90% of requests load the meditation session selection screen within 3 seconds"
     },
     {
       "test_id": "T_auto_4a",
       "requirement_id": "FR_auto_4",
-      "scenario": "Auto-stop after 30 minutes of inactivity while playing content",
+      "scenario": "Load meditation library within 3 seconds",
       "steps": [
-        "Launch the Calm app and start playing a meditation session",
-        "Simulate 30 minutes of inactivity (e.g., lock the screen, turn off the device, or switch to another app)",
-        "Verify the app's current state"
+        "Launch the Calm app",
+        "Navigate to the meditation library section",
+        "Measure the time taken for the library to load"
       ],
-      "expected_result": "The meditation session stops playing automatically"
+      "expected_result": "The meditation library loads within 3 seconds for 95% of requests"
     },
     {
       "test_id": "T_auto_4b",
       "requirement_id": "FR_auto_4",
-      "scenario": "Content continues playing if user interacts within 30 minutes",
+      "scenario": "Verify loading time for repeated requests",
       "steps": [
-        "Launch the Calm app and start playing a sleep story",
-        "Simulate 25 minutes of inactivity",
-        "Interact with the app (e.g., pause and resume the session)",
-        "Simulate an additional 5 minutes of inactivity",
-        "Verify the app's current state"
+        "Launch the Calm app 100 times",
+        "Navigate to the meditation library section for each launch",
+        "Measure the time taken for the library to load for each request"
       ],
-      "expected_result": "The sleep story continues playing after the interaction and does not stop automatically until 30 minutes of inactivity have passed"
+      "expected_result": "At least 95 out of 100 requests load the meditation library within 3 seconds"
     },
     {
       "test_id": "T_auto_5a",
       "requirement_id": "FR_auto_5",
-      "scenario": "Validate pricing model transparency during onboarding",
+      "scenario": "Validate daily meditation session duration",
       "steps": [
-        "Launch the Calm app and navigate to the onboarding process",
-        "Select a subscription plan and proceed to payment",
-        "Review the payment summary and terms"
+        "Launch the Calm app",
+        "Navigate to the meditation sessions section",
+        "Select the daily meditation session option"
       ],
-      "expected_result": "The app clearly displays the pricing details, including any trial periods, subscription lengths, and charges, with no unexpected fees."
+      "expected_result": "The daily meditation session lasts no longer than 10 minutes"
     },
     {
       "test_id": "T_auto_5b",
       "requirement_id": "FR_auto_5",
-      "scenario": "Verify no unexpected charges during onboarding",
+      "scenario": "Verify daily meditation session duration display",
       "steps": [
-        "Start the onboarding process and select a free trial option",
-        "After the trial period, proceed with the subscription without canceling",
-        "Verify the charges and subscription details"
+        "Launch the Calm app",
+        "Navigate to the meditation sessions section",
+        "Select the daily meditation session option",
+        "Check the session duration display"
       ],
-      "expected_result": "The app does not apply any charges during the onboarding process without explicit user consent, and the subscription details are transparent."
+      "expected_result": "The session duration is clearly displayed and is 10 minutes or less"
     },
     {
       "test_id": "T_auto_6a",
       "requirement_id": "FR_auto_6",
-      "scenario": "Validate pricing model transparency during onboarding",
+      "scenario": "Validate daily meditation session duration for a new user",
       "steps": [
-        "Launch the Calm app and navigate to the onboarding process",
-        "Select a subscription plan and proceed to payment",
-        "Review the payment summary and terms"
+        "Launch the Calm app",
+        "Navigate to the daily meditation session section",
+        "Start a new daily meditation session"
       ],
-      "expected_result": "The app clearly displays the pricing details, including any taxes or fees, with no unexpected charges"
+      "expected_result": "The meditation session lasts between 8-10 minutes"
     },
     {
       "test_id": "T_auto_6b",
       "requirement_id": "FR_auto_6",
-      "scenario": "Verify no hidden charges during onboarding",
+      "scenario": "Validate daily meditation session duration for 10 consecutive days",
       "steps": [
-        "Start the onboarding process and select a free trial option",
-        "After the trial period, attempt to upgrade to a paid subscription",
-        "Review the payment summary and terms before completing the upgrade"
+        "Launch the Calm app",
+        "Navigate to the daily meditation session section",
+        "Complete 10 consecutive daily meditation sessions",
+        "Record the duration of each session"
       ],
-      "expected_result": "The app does not apply any unexpected charges or fees during the upgrade process"
+      "expected_result": "At least 9 out of 10 sessions last between 8-10 minutes"
     },
     {
       "test_id": "T_auto_7a",
       "requirement_id": "FR_auto_7",
-      "scenario": "Validate default meditation session duration",
+      "scenario": "Validate free meditation sessions for non-subscribed users",
       "steps": [
         "Launch the Calm app",
-        "Navigate to the meditation session selection screen",
-        "Select a meditation session without specifying a duration"
+        "Verify the user is not logged in or subscribed to the premium service",
+        "Navigate to the meditation sessions section"
       ],
-      "expected_result": "The meditation session starts with a default duration of 10 minutes"
+      "expected_result": "The app displays at least 30 free meditation sessions available for the user"
     },
     {
       "test_id": "T_auto_7b",
       "requirement_id": "FR_auto_7",
-      "scenario": "Validate meditation session duration range",
+      "scenario": "Verify the limit of free meditation sessions per month for non-subscribed users",
       "steps": [
         "Launch the Calm app",
-        "Navigate to the meditation session selection screen",
-        "Select a meditation session with a custom duration"
+        "Verify the user is not logged in or subscribed to the premium service",
+        "Access and complete 30 free meditation sessions",
+        "Navigate back to the meditation sessions section"
       ],
-      "expected_result": "The app allows selecting a meditation session duration between 5 and 20 minutes"
+      "expected_result": "The app indicates that no more free meditation sessions are available for the month or limits access to additional sessions"
     },
     {
       "test_id": "T_auto_8a",
       "requirement_id": "FR_auto_8",
-      "scenario": "Validate default guided meditation session duration",
+      "scenario": "Validate free meditation sessions for non-subscribed users",
       "steps": [
         "Launch the Calm app",
-        "Navigate to the meditation session selection screen",
-        "Select a guided meditation session without specifying a duration"
+        "Verify the user is not logged in or subscribed to the premium service",
+        "Navigate to the meditation session library"
       ],
-      "expected_result": "The guided meditation session starts with a default duration of 10 minutes"
+      "expected_result": "The user can access at least 30 free meditation sessions"
     },
     {
       "test_id": "T_auto_8b",
       "requirement_id": "FR_auto_8",
-      "scenario": "Validate guided meditation session duration range",
+      "scenario": "Verify the 30 free meditation session limit for non-subscribed users",
       "steps": [
         "Launch the Calm app",
-        "Navigate to the meditation session selection screen",
-        "Select a guided meditation session with a custom duration of 15 minutes"
+        "Verify the user is not logged in or subscribed to the premium service",
+        "Access 30 free meditation sessions",
+        "Attempt to access a 31st free meditation session"
       ],
-      "expected_result": "The guided meditation session starts and lasts for 15 minutes, which is between 5 and 20 minutes"
+      "expected_result": "The user is prevented from accessing the 31st free meditation session and is prompted to subscribe to the premium service"
     },
     {
       "test_id": "T_auto_9a",
       "requirement_id": "FR_auto_9",
-      "scenario": "Validate the number of guided meditation sessions",
+      "scenario": "Validate guided meditation session with calming nature sound",
       "steps": [
         "Launch the Calm app",
-        "Navigate to the meditation library section",
-        "Count the number of guided meditation sessions available"
+        "Navigate to the meditation session selection menu",
+        "Select a guided meditation session with a calming nature sound (e.g., ocean waves)",
+        "Start the meditation session",
+        "Verify the session includes a calming nature sound"
       ],
-      "expected_result": "The app displays at least 50 guided meditation sessions"
+      "expected_result": "The meditation session includes a calming nature sound (e.g., ocean waves) and lasts for at least 20 minutes."
     },
     {
       "test_id": "T_auto_9b",
       "requirement_id": "FR_auto_9",
-      "scenario": "Validate the duration of guided meditation sessions",
+      "scenario": "Validate meditation session duration",
       "steps": [
         "Launch the Calm app",
-        "Navigate to the meditation library section",
-        "Select 5 random guided meditation sessions",
-        "Verify the duration of each selected session"
+        "Navigate to the meditation session selection menu",
+        "Select a guided meditation session with a calming nature sound (e.g., ocean waves)",
+        "Start the meditation session",
+        "Monitor the session duration"
       ],
-      "expected_result": "All selected sessions have a duration between 5 and 30 minutes"
+      "expected_result": "The meditation session lasts for at least 20 minutes."
     },
     {
       "test_id": "T_auto_10a",
@@ -210,9 +215,9 @@
       "steps": [
         "Launch the Calm app",
         "Navigate to the meditation library section",
-        "Count the total number of guided meditation sessions available"
+        "Count the number of guided meditation sessions available"
       ],
-      "expected_result": "The app displays at least 50 guided meditation sessions"
+      "expected_result": "The app displays at least 20 guided meditation sessions"
     },
     {
       "test_id": "T_auto_10b",
@@ -221,11 +226,11 @@
       "steps": [
         "Launch the Calm app",
         "Navigate to the meditation library section",
-        "Select 5 random meditation sessions",
-        "Verify the duration of each session",
-        "Verify the themes and narrators of each session"
+        "Select 5 random guided meditation sessions",
+        "Verify the duration and theme of each session",
+        "Verify the availability of various soothing sounds"
       ],
-      "expected_result": "All selected sessions have durations between 5 and 60 minutes, and there is a variety of themes and narrators"
+      "expected_result": "All selected sessions have durations between 5 and 30 minutes, and there is a variety of themes and soothing sounds"
     }
   ]
 }
