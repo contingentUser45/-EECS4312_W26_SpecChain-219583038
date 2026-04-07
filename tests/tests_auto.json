@@ -3,222 +3,229 @@
     {
       "test_id": "T_auto_1a",
       "requirement_id": "FR_auto_1",
-      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "scenario": "Validate free meditation sessions for non-subscribed users",
       "steps": [
-        "initialize system",
-        "execute function related to: The system shall operate without failure under normal usage conditions.",
-        "capture system response"
+        "Launch the Calm app",
+        "Verify the user is not logged in or subscribed",
+        "Navigate to the meditation sessions library"
       ],
-      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+      "expected_result": "The user can access at least 50 free meditation sessions"
     },
     {
       "test_id": "T_auto_1b",
       "requirement_id": "FR_auto_1",
-      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "scenario": "Verify the monthly limit of free meditation sessions",
       "steps": [
-        "initialize system",
-        "execute function related to: The system shall operate without failure under normal usage conditions.",
-        "capture system response"
+        "Launch the Calm app",
+        "Verify the user is not logged in or subscribed",
+        "Access 50 free meditation sessions",
+        "Attempt to access one more session"
       ],
-      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+      "expected_result": "The user is prevented from accessing more than 50 free meditation sessions per month and is prompted to subscribe"
     },
     {
       "test_id": "T_auto_2a",
       "requirement_id": "FR_auto_2",
-      "scenario": "validate The app shall provide a free trial period of at least 7 days for new users to test its features before being charged.",
+      "scenario": "Validate free trial period for new users",
       "steps": [
-        "initialize system",
-        "execute function related to: The app shall provide a free trial period of at least 7 days for new users to test its features before being charged.",
-        "capture system response"
+        "Launch the Calm app and navigate to the sign-up page",
+        "Sign up for a new account with a valid email address and password",
+        "Complete the onboarding process and access the premium content section"
       ],
-      "expected_result": "system satisfies requirement: The app shall provide a free trial period of at least 7 days for new users to test its features before being charged."
+      "expected_result": "The app offers a free trial period of at least 7 days for new users to access premium meditation and sleep content"
     },
     {
       "test_id": "T_auto_2b",
       "requirement_id": "FR_auto_2",
-      "scenario": "validate The app shall provide a free trial period of at least 7 days for new users to test its features before being charged.",
+      "scenario": "Verify trial period duration",
       "steps": [
-        "initialize system",
-        "execute function related to: The app shall provide a free trial period of at least 7 days for new users to test its features before being charged.",
-        "capture system response"
+        "Launch the Calm app and navigate to the account settings page",
+        "Verify the trial period start date and calculate the end date",
+        "Check if the premium content remains accessible during the trial period"
       ],
-      "expected_result": "system satisfies requirement: The app shall provide a free trial period of at least 7 days for new users to test its features before being charged."
+      "expected_result": "The trial period is at least 7 days long and the premium content is accessible during this time"
     },
     {
       "test_id": "T_auto_3a",
       "requirement_id": "FR_auto_3",
-      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "scenario": "Auto-stop after 30 minutes of inactivity",
       "steps": [
-        "initialize system",
-        "execute function related to: The system shall operate without failure under normal usage conditions.",
-        "capture system response"
+        "Launch the Calm app and start playing a meditation session",
+        "Simulate 29 minutes of inactivity (e.g., no interactions, no screen changes)",
+        "Simulate 2 minutes of inactivity (i.e., 31 minutes total inactivity)"
       ],
-      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+      "expected_result": "The meditation session stops playing automatically"
     },
     {
       "test_id": "T_auto_3b",
       "requirement_id": "FR_auto_3",
-      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "scenario": "Content continues playing if user interacts within 30 minutes",
       "steps": [
-        "initialize system",
-        "execute function related to: The system shall operate without failure under normal usage conditions.",
-        "capture system response"
+        "Launch the Calm app and start playing a sleep story",
+        "Simulate 25 minutes of inactivity",
+        "Simulate a user interaction (e.g., pause and resume the session)",
+        "Simulate an additional 5 minutes of inactivity"
       ],
-      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+      "expected_result": "The sleep story continues playing after the interaction and does not stop automatically"
     },
     {
       "test_id": "T_auto_4a",
       "requirement_id": "FR_auto_4",
-      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "scenario": "Auto-stop after 30 minutes of inactivity while playing content",
       "steps": [
-        "initialize system",
-        "execute function related to: The system shall operate without failure under normal usage conditions.",
-        "capture system response"
+        "Launch the Calm app and start playing a meditation session",
+        "Simulate 30 minutes of inactivity (e.g., lock the screen, turn off the device, or switch to another app)",
+        "Verify the app's current state"
       ],
-      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+      "expected_result": "The meditation session stops playing automatically"
     },
     {
       "test_id": "T_auto_4b",
       "requirement_id": "FR_auto_4",
-      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "scenario": "Content continues playing if user interacts within 30 minutes",
       "steps": [
-        "initialize system",
-        "execute function related to: The system shall operate without failure under normal usage conditions.",
-        "capture system response"
+        "Launch the Calm app and start playing a sleep story",
+        "Simulate 25 minutes of inactivity",
+        "Interact with the app (e.g., pause and resume the session)",
+        "Simulate an additional 5 minutes of inactivity",
+        "Verify the app's current state"
       ],
-      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+      "expected_result": "The sleep story continues playing after the interaction and does not stop automatically until 30 minutes of inactivity have passed"
     },
     {
       "test_id": "T_auto_5a",
       "requirement_id": "FR_auto_5",
-      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "scenario": "Validate pricing model transparency during onboarding",
       "steps": [
-        "initialize system",
-        "execute function related to: The system shall operate without failure under normal usage conditions.",
-        "capture system response"
+        "Launch the Calm app and navigate to the onboarding process",
+        "Select a subscription plan and proceed to payment",
+        "Review the payment summary and terms"
       ],
-      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+      "expected_result": "The app clearly displays the pricing details, including any trial periods, subscription lengths, and charges, with no unexpected fees."
     },
     {
       "test_id": "T_auto_5b",
       "requirement_id": "FR_auto_5",
-      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "scenario": "Verify no unexpected charges during onboarding",
       "steps": [
-        "initialize system",
-        "execute function related to: The system shall operate without failure under normal usage conditions.",
-        "capture system response"
+        "Start the onboarding process and select a free trial option",
+        "After the trial period, proceed with the subscription without canceling",
+        "Verify the charges and subscription details"
       ],
-      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+      "expected_result": "The app does not apply any charges during the onboarding process without explicit user consent, and the subscription details are transparent."
     },
     {
       "test_id": "T_auto_6a",
       "requirement_id": "FR_auto_6",
-      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "scenario": "Validate pricing model transparency during onboarding",
       "steps": [
-        "initialize system",
-        "execute function related to: The system shall operate without failure under normal usage conditions.",
-        "capture system response"
+        "Launch the Calm app and navigate to the onboarding process",
+        "Select a subscription plan and proceed to payment",
+        "Review the payment summary and terms"
       ],
-      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+      "expected_result": "The app clearly displays the pricing details, including any taxes or fees, with no unexpected charges"
     },
     {
       "test_id": "T_auto_6b",
       "requirement_id": "FR_auto_6",
-      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "scenario": "Verify no hidden charges during onboarding",
       "steps": [
-        "initialize system",
-        "execute function related to: The system shall operate without failure under normal usage conditions.",
-        "capture system response"
+        "Start the onboarding process and select a free trial option",
+        "After the trial period, attempt to upgrade to a paid subscription",
+        "Review the payment summary and terms before completing the upgrade"
       ],
-      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+      "expected_result": "The app does not apply any unexpected charges or fees during the upgrade process"
     },
     {
       "test_id": "T_auto_7a",
       "requirement_id": "FR_auto_7",
-      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "scenario": "Validate default meditation session duration",
       "steps": [
-        "initialize system",
-        "execute function related to: The system shall operate without failure under normal usage conditions.",
-        "capture system response"
+        "Launch the Calm app",
+        "Navigate to the meditation session selection screen",
+        "Select a meditation session without specifying a duration"
       ],
-      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+      "expected_result": "The meditation session starts with a default duration of 10 minutes"
     },
     {
       "test_id": "T_auto_7b",
       "requirement_id": "FR_auto_7",
-      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "scenario": "Validate meditation session duration range",
       "steps": [
-        "initialize system",
-        "execute function related to: The system shall operate without failure under normal usage conditions.",
-        "capture system response"
+        "Launch the Calm app",
+        "Navigate to the meditation session selection screen",
+        "Select a meditation session with a custom duration"
       ],
-      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+      "expected_result": "The app allows selecting a meditation session duration between 5 and 20 minutes"
     },
     {
       "test_id": "T_auto_8a",
       "requirement_id": "FR_auto_8",
-      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "scenario": "Validate default guided meditation session duration",
       "steps": [
-        "initialize system",
-        "execute function related to: The system shall operate without failure under normal usage conditions.",
-        "capture system response"
+        "Launch the Calm app",
+        "Navigate to the meditation session selection screen",
+        "Select a guided meditation session without specifying a duration"
       ],
-      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+      "expected_result": "The guided meditation session starts with a default duration of 10 minutes"
     },
     {
       "test_id": "T_auto_8b",
       "requirement_id": "FR_auto_8",
-      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "scenario": "Validate guided meditation session duration range",
       "steps": [
-        "initialize system",
-        "execute function related to: The system shall operate without failure under normal usage conditions.",
-        "capture system response"
+        "Launch the Calm app",
+        "Navigate to the meditation session selection screen",
+        "Select a guided meditation session with a custom duration of 15 minutes"
       ],
-      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+      "expected_result": "The guided meditation session starts and lasts for 15 minutes, which is between 5 and 20 minutes"
     },
     {
       "test_id": "T_auto_9a",
       "requirement_id": "FR_auto_9",
-      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "scenario": "Validate the number of guided meditation sessions",
       "steps": [
-        "initialize system",
-        "execute function related to: The system shall operate without failure under normal usage conditions.",
-        "capture system response"
+        "Launch the Calm app",
+        "Navigate to the meditation library section",
+        "Count the number of guided meditation sessions available"
       ],
-      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+      "expected_result": "The app displays at least 50 guided meditation sessions"
     },
     {
       "test_id": "T_auto_9b",
       "requirement_id": "FR_auto_9",
-      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "scenario": "Validate the duration of guided meditation sessions",
       "steps": [
-        "initialize system",
-        "execute function related to: The system shall operate without failure under normal usage conditions.",
-        "capture system response"
+        "Launch the Calm app",
+        "Navigate to the meditation library section",
+        "Select 5 random guided meditation sessions",
+        "Verify the duration of each selected session"
       ],
-      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+      "expected_result": "All selected sessions have a duration between 5 and 30 minutes"
     },
     {
       "test_id": "T_auto_10a",
       "requirement_id": "FR_auto_10",
-      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "scenario": "Validate the number of guided meditation sessions",
       "steps": [
-        "initialize system",
-        "execute function related to: The system shall operate without failure under normal usage conditions.",
-        "capture system response"
+        "Launch the Calm app",
+        "Navigate to the meditation library section",
+        "Count the total number of guided meditation sessions available"
       ],
-      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+      "expected_result": "The app displays at least 50 guided meditation sessions"
     },
     {
       "test_id": "T_auto_10b",
       "requirement_id": "FR_auto_10",
-      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "scenario": "Validate the duration and variety of guided meditation sessions",
       "steps": [
-        "initialize system",
-        "execute function related to: The system shall operate without failure under normal usage conditions.",
-        "capture system response"
+        "Launch the Calm app",
+        "Navigate to the meditation library section",
+        "Select 5 random meditation sessions",
+        "Verify the duration of each session",
+        "Verify the themes and narrators of each session"
       ],
-      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+      "expected_result": "All selected sessions have durations between 5 and 60 minutes, and there is a variety of themes and narrators"
     }
   ]
 }

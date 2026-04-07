@@ -1,6 +1,6 @@
 """generates tests from specs + logs prompts with append/diff"""
-import json, os, sys, re, time
-from groq import Groq
+import json, os, sys, re, time, random
+from groq import Groq, RateLimitError, APIError
 
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 spec_path = os.path.join(root, "spec", "spec_auto.md")
@@ -8,8 +8,10 @@ output_path = os.path.join(root, "tests", "tests_auto.json")
 prompt_path = os.path.join(root, "prompts", "prompt_auto.json")
 
 model_id = "meta-llama/llama-4-scout-17b-16e-instruct"
-
 env = os.path.join(root, ".env")
+
+MAX_RETRIES = 5
+BASE_DELAY = 1.5
 
 print("Checking for GROQ_API_KEY...")
 key = os.environ.get("GROQ_API_KEY")
@@ -52,7 +54,7 @@ commands = (
     "requirement:\n{req}\n\n"
     "generate two test scenarios using this format:\n\n"
     '{{'
-    '"test_scenarios": ['
+    '"test_scenarios": [' 
     '{{'
     '"test_id": "T_auto_xa",'
     '"requirement_id": "fr_auto_x",'
@@ -114,59 +116,72 @@ def generate_test(client, req, idx):
     prompt = commands.format(req=json.dumps(req, indent=2))
     raw_content = "error"
 
-    try:
-        res = client.chat.completions.create(
-            model=model_id,
-            messages=[
-                {"role": "system", "content": sys_prompt},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.2,
-            response_format={"type": "json_object"}
-        )
+    for attempt in range(MAX_RETRIES):
+        try:
+            res = client.chat.completions.create(
+                model=model_id,
+                messages=[
+                    {"role": "system", "content": sys_prompt},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.2,
+                response_format={"type": "json_object"}
+            )
 
-        raw_content = res.choices[0].message.content
-        parsed = json.loads(raw_content)
+            raw_content = res.choices[0].message.content
+            parsed = json.loads(raw_content)
 
-        if isinstance(parsed, list):
-            test_list = parsed
-        elif isinstance(parsed, dict):
-            if "test_scenarios" in parsed and isinstance(parsed["test_scenarios"], list):
-                test_list = parsed["test_scenarios"]
-            elif "tests" in parsed and isinstance(parsed["tests"], list):
-                test_list = parsed["tests"]
+            if isinstance(parsed, list):
+                test_list = parsed
+            elif isinstance(parsed, dict):
+                if "test_scenarios" in parsed and isinstance(parsed["test_scenarios"], list):
+                    test_list = parsed["test_scenarios"]
+                elif "tests" in parsed and isinstance(parsed["tests"], list):
+                    test_list = parsed["tests"]
+                else:
+                    test_list = [parsed]
             else:
-                test_list = [parsed]
-        else:
-            raise ValueError("invalid structure")
+                raise ValueError("invalid structure")
 
-        results = []
-        suffixes = ["a", "b"]
-        for j in range(2):
-            if j < len(test_list):
-                data = test_list[j]
-                if not isinstance(data, dict):
+            results = []
+            suffixes = ["a", "b"]
+
+            for j in range(2):
+                if j < len(test_list):
+                    data = test_list[j]
+                    if not isinstance(data, dict):
+                        data = fallback_test(req, idx, suffixes[j])
+                else:
                     data = fallback_test(req, idx, suffixes[j])
-            else:
-                data = fallback_test(req, idx, suffixes[j])
 
-            data["test_id"] = f"T_auto_{idx}{suffixes[j]}"
-            data["requirement_id"] = req["requirement_id"]
-
-            if not is_valid_test(data):
-                data = fallback_test(req, idx, suffixes[j])
                 data["test_id"] = f"T_auto_{idx}{suffixes[j]}"
                 data["requirement_id"] = req["requirement_id"]
 
-            results.append(data)
+                if not is_valid_test(data):
+                    data = fallback_test(req, idx, suffixes[j])
+                    data["test_id"] = f"T_auto_{idx}{suffixes[j]}"
+                    data["requirement_id"] = req["requirement_id"]
 
-        return results, prompt, raw_content
+                results.append(data)
 
-    except Exception as e:
-        print(f"something went wrong for {req['requirement_id']}, using backup")
-        t1 = fallback_test(req, idx, "a")
-        t2 = fallback_test(req, idx, "b")
-        return [t1, t2], prompt, raw_content
+            return results, prompt, raw_content
+
+        except (RateLimitError, APIError):
+            if attempt == MAX_RETRIES - 1:
+                print(f"[FAIL] Max retries hit for {req['requirement_id']}")
+                break
+
+            delay = BASE_DELAY * (2 ** attempt) + random.uniform(0, 0.5)
+            print(f"[Retry {attempt+1}] Rate limited. Sleeping {delay:.2f}s")
+            time.sleep(delay)
+
+        except Exception:
+            print(f"something went wrong for {req['requirement_id']}, using backup")
+            break
+
+    t1 = fallback_test(req, idx, "a")
+    t2 = fallback_test(req, idx, "b")
+    return [t1, t2], prompt, raw_content
 
 
 def save_tests(path, data):
@@ -237,6 +252,8 @@ def run():
             "response": response,
             "model": model_id
         })
+
+        time.sleep(0.5)  # throttle to avoid burst rate limits
 
         elapsed = time.time() - start_time
         avg = elapsed / i

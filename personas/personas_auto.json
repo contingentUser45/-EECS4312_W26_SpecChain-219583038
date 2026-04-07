@@ -1,69 +1,99 @@
 [
   {
-    "persona_id": 1,
-    "name": "Alex Chen",
-    "age_range": "25-44",
-    "occupation": "Working Professional",
-    "context": "Uses meditation and relaxation apps to manage stress",
+    "persona_id": "A2-001",
+    "name": "Lena Wellness",
+    "age_range": "25-45",
+    "occupation": "Yoga Instructor",
+    "context": "Seeking relaxation and mindfulness tools",
     "goals": [
-      "Reduce stress and anxiety",
-      "Improve mental well-being"
+      "Improve sleep quality",
+      "Reduce stress",
+      "Increase mindfulness"
     ],
     "pain_points": [
-      "Frustrated with apps that don't deliver on promises",
-      "Worried about being charged for subpar services",
-      "Difficulty navigating apps"
+      "Difficulty finding effective relaxation techniques",
+      "Frustrated with expensive apps",
+      "Seeking variety in meditation and sleep content"
     ],
-    "tech_comfort": "Moderate",
-    "quote": "I just want something that works and helps me relax, without breaking the bank",
-    "group_theme": "Skeptical of paid services, values effectiveness and ease of use"
+    "tech_comfort": "High",
+    "quote": "I love how this app helps me unwind, but I wish it was more affordable.",
+    "group_theme": "Wellness Enthusiasts"
   },
   {
-    "persona_id": "A2-001",
-    "name": "Emily W.",
+    "persona_id": "A5-1",
+    "name": "Alex Chen",
+    "age_range": "25-45",
+    "occupation": "Marketing Specialist",
+    "context": "Struggling to manage stress and sleep with a busy schedule",
+    "goals": [
+      "Improve sleep quality",
+      "Reduce stress and anxiety"
+    ],
+    "pain_points": [
+      "Difficulties navigating the app",
+      "Frustrating UX experience",
+      "Inability to easily find and play favorite content"
+    ],
+    "tech_comfort": "Intermediate",
+    "quote": "I just want to be able to relax and fall asleep without having to manually stop the app every time.",
+    "group_theme": "Frustrated Sleep Seeker"
+  },
+  {
+    "persona_id": "A4-1",
+    "name": "Frustrated Fiona",
     "age_range": "25-45",
     "occupation": "Working professional",
-    "context": "Seeking relaxation and stress relief through meditation and mindfulness",
+    "context": "High stress levels, seeking relaxation and calmness",
+    "goals": [
+      "Find a reliable and affordable relaxation tool",
+      "Effectively manage stress and anxiety"
+    ],
+    "pain_points": [
+      "Aggressive paywalls",
+      "Poor tech support",
+      "Frustrating onboarding process",
+      "Unexpected charges"
+    ],
+    "tech_comfort": "Moderate",
+    "quote": "I just want to calm down, not fight with an app",
+    "group_theme": "Frustration with monetization strategies"
+  },
+  {
+    "persona_id": "A3-001",
+    "name": "Alex Chen",
+    "age_range": "25-35",
+    "occupation": "Marketing Specialist",
+    "context": "Busy professional with a demanding work schedule, looking for ways to manage stress and improve mental well-being",
     "goals": [
       "Reduce stress and anxiety",
       "Improve sleep quality",
-      "Increase focus and calmness"
+      "Increase mindfulness and relaxation"
     ],
     "pain_points": [
-      "Limited free content",
-      "Obligation to create account for full access",
-      "Expensive premium features"
+      "Difficulty sleeping due to stress and anxiety",
+      "Limited time for self-care and relaxation",
+      "Frustration with expensive subscription models"
     ],
     "tech_comfort": "High",
-    "quote": "I was skeptical at first, but this app has really helped me take my mind off all the thoughts racing through my head and get some rest.",
-    "group_theme": "Relaxation and Stress Relief"
+    "quote": "Calm has been a literal lifesaver. I use it daily to manage stress and anxiety.",
+    "group_theme": "Health and Wellness"
   },
   {
-    "persona_id": "ap3",
-    "name": "user3"
-  },
-  {
-    "persona_id": "ap4",
-    "name": "user4"
-  },
-  {
-    "persona_id": "A1-001",
-    "name": "Emily Wilson",
+    "persona_id": "A1-P1",
+    "name": "Alex Chen",
     "age_range": "25-45",
     "occupation": "Marketing Manager",
-    "context": "Struggling with stress and sleep deprivation due to a demanding work schedule",
+    "context": "High-stress professional",
     "goals": [
-      "Reduce stress and anxiety",
-      "Improve sleep quality",
-      "Increase productivity"
+      "Relax and reduce stress",
+      "Improve sleep quality"
     ],
     "pain_points": [
-      "Difficulty falling asleep",
-      "Stress and anxiety during work hours",
-      "Limited time for self-care"
+      "Difficulty sleeping due to stress",
+      "Feeling overwhelmed and anxious"
     ],
-    "tech_comfort": "High",
-    "quote": "I just wish I could fall asleep as soon as my head hits the pillow, without all those racing thoughts.",
-    "group_theme": "Stress Relief and Sleep"
+    "tech_comfort": "Highly tech-savvy",
+    "quote": "I just love listening to ocean waves, it's so soothing.",
+    "group_theme": "Relaxation and Sleep"
   }
 ]

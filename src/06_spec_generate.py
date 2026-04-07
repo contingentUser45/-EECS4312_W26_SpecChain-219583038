@@ -1,12 +1,15 @@
 """generates structured specs from personas"""
-import json, os, sys, time
-from groq import Groq
+import json, os, sys, time, random
+from groq import Groq, RateLimitError, APIError
 
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 personas_path = os.path.join(root, "personas", "personas_auto.json")
 groups_path = os.path.join(root, "data", "review_groups_auto.json")
 output_path = os.path.join(root, "spec", "spec_auto.md")
 prompt_path = os.path.join(root, "prompts", "prompt_auto.json")
+
+MAX_RETRIES = 5
+BASE_DELAY = 1.5
 
 model_id = "meta-llama/llama-4-scout-17b-16e-instruct"
 env = os.path.join(root, ".env")
@@ -77,30 +80,47 @@ def generate_requirement(client, persona, group, idx):
 
     user_prompt = commands.format(persona=persona_text, theme=theme, gid=gid)
 
-    try:
-        res = client.chat.completions.create(
-            model=model_id,
-            messages=[
-                {"role": "system", "content": sys_prompt},
-                {"role": "user", "content": user_prompt}
-            ],
-            temperature=0.3,
-            response_format={"type": "json_object"}
-        )
+    for attempt in range(MAX_RETRIES):
+        try:
+            res = client.chat.completions.create(
+                model=model_id,
+                messages=[
+                    {"role": "system", "content": sys_prompt},
+                    {"role": "user", "content": user_prompt}
+                ],
+                temperature=0.3,
+                response_format={"type": "json_object"}
+            )
 
-        content = res.choices[0].message.content.strip()
-        parsed = json.loads(content)
+            content = res.choices[0].message.content.strip()
+            parsed = json.loads(content)
 
-        if isinstance(parsed, list):
-            if len(parsed) == 0:
-                raise ValueError("Empty list returned")
-            data = parsed[0]
-        elif isinstance(parsed, dict):
-            data = parsed
-        else:
-            raise ValueError(f"Unexpected type: {type(parsed)}")
+            if isinstance(parsed, list):
+                if len(parsed) == 0:
+                    raise ValueError("Empty list returned")
+                data = parsed[0]
+            elif isinstance(parsed, dict):
+                data = parsed
+            else:
+                raise ValueError(f"Unexpected type: {type(parsed)}")
 
-    except Exception:
+            break  # success
+
+        except (RateLimitError, APIError) as e:
+            if attempt == MAX_RETRIES - 1:
+                print(f"[FAIL] Max retries hit for {idx}")
+                data = None
+                break
+
+            delay = BASE_DELAY * (2 ** attempt) + random.uniform(0, 0.5)
+            print(f"[Retry {attempt+1}] Rate limited. Sleeping {delay:.2f}s")
+            time.sleep(delay)
+
+        except Exception:
+            data = None
+            break
+
+    if not data:
         data = {
             "requirement_id": f"FR_auto_{idx}",
             "description": "The system shall operate without failure under normal usage conditions.",
