@@ -21,7 +21,7 @@
         "Select a subscription option",
         "View pricing details"
       ],
-      "expected_result": "All costs billing frequency and renewal terms are displayed before confirmation",
+      "expected_result": "All costs, billing frequency and renewal terms are displayed before confirmation",
       "notes": "Rewritten to remove JSON output and ensure clarity and testability"
     },
     {
@@ -119,6 +119,126 @@
       ],
       "expected_result": "The app does not crash during at least 95 percent of sessions",
       "notes": "Rewritten to align with measurable stability requirement"
+    },
+    {
+      "test_id": "T_hybrid_11",
+      "requirement_id": "FR_hybrid_1",
+      "scenario": "Verify free trial expiration",
+      "steps": [
+        "Create a new user account and start the free trial",
+        "Access premium content during the trial",
+        "Wait until after the trial period (simulate 8 days)"
+      ],
+      "expected_result": "The app prompts the user to subscribe and blocks access to premium features after trial expiration",
+      "notes": "Added to cover full trial lifecycle"
+    },
+    {
+      "test_id": "T_hybrid_12",
+      "requirement_id": "FR_hybrid_2",
+      "scenario": "Transparent subscription details with no hidden fees",
+      "steps": [
+        "Navigate to the subscription or pricing section",
+        "Select a plan and begin checkout",
+        "Review the full payment summary"
+      ],
+      "expected_result": "All costs, taxes, billing frequency, renewal terms and included features are clearly shown with no hidden charges",
+      "notes": "Merged from multiple auto tests for better transparency"
+    },
+    {
+      "test_id": "T_hybrid_13",
+      "requirement_id": "FR_hybrid_4",
+      "scenario": "Free access to core meditation features",
+      "steps": [
+        "Open the app without a subscription",
+        "Navigate to meditation, sleep stories or music sections",
+        "Attempt to use core features"
+      ],
+      "expected_result": "Core free features such as basic meditations, breathing exercises and limited sleep stories/music are fully accessible",
+      "notes": "Strengthened free tier coverage"
+    },
+    {
+      "test_id": "T_hybrid_14",
+      "requirement_id": "FR_hybrid_7",
+      "scenario": "Fast loading of meditation sessions",
+      "steps": [
+        "Open the app",
+        "Navigate to a meditation session",
+        "Select and load the session (repeat 10 times)"
+      ],
+      "expected_result": "The meditation session loads within 3 seconds in at least 90% of attempts",
+      "notes": "Added performance test"
+    },
+    {
+      "test_id": "T_hybrid_15",
+      "requirement_id": "FR_hybrid_8",
+      "scenario": "Calming audio experience in guided sessions",
+      "steps": [
+        "Start a guided meditation or sleep story session",
+        "Listen for voice quality and pacing",
+        "Continue session for at least 15 minutes"
+      ],
+      "expected_result": "The session provides a consistently calming and soothing voice with gentle pace",
+      "notes": "Added for audio quality validation"
+    },
+    {
+      "test_id": "T_hybrid_16",
+      "requirement_id": "FR_hybrid_2",
+      "scenario": "Clear display of subscription plans",
+      "steps": [
+        "Open the subscription page",
+        "Review all available plans",
+        "Compare what is included in each plan"
+      ],
+      "expected_result": "All subscription plans clearly display pricing, features included, and renewal information",
+      "notes": "Enhanced pricing transparency"
+    },
+    {
+      "test_id": "T_hybrid_17",
+      "requirement_id": "FR_hybrid_4",
+      "scenario": "Limited but usable free content library",
+      "steps": [
+        "Open the app without subscription",
+        "Browse the full content library",
+        "Count and identify free vs locked items"
+      ],
+      "expected_result": "A meaningful selection of free content is available while premium items show clear lock/premium labels",
+      "notes": "Improved free vs premium distinction"
+    },
+    {
+      "test_id": "T_hybrid_18",
+      "requirement_id": "FR_hybrid_5",
+      "scenario": "Background audio playback support",
+      "steps": [
+        "Start audio playback (meditation or sleep story)",
+        "Minimize the app or lock the screen",
+        "Check if audio continues"
+      ],
+      "expected_result": "Audio continues playing in the background without interruption for at least 30 minutes",
+      "notes": "Realistic background usage test"
+    },
+    {
+      "test_id": "T_hybrid_19",
+      "requirement_id": "FR_hybrid_10",
+      "scenario": "App stability under mixed usage",
+      "steps": [
+        "Open the app",
+        "Perform a mix of navigation, search, playback and pause actions for 20 minutes",
+        "Monitor for crashes or freezes"
+      ],
+      "expected_result": "The app remains stable with no crashes or major freezes",
+      "notes": "Extended stability scenario"
+    },
+    {
+      "test_id": "T_hybrid_20",
+      "requirement_id": "FR_hybrid_9",
+      "scenario": "Minimal intrusive upgrade prompts",
+      "steps": [
+        "Start a free content session",
+        "Use the app normally for 45 minutes",
+        "Count any upgrade or premium prompts"
+      ],
+      "expected_result": "No more than one upgrade prompt appears during the entire session",
+      "notes": "Final refinement for user experience"
     }
   ]
 }

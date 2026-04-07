@@ -1,98 +1,69 @@
 [
   {
-    "persona_id": "A5-1",
-    "name": "Frustrated Fiona",
-    "age_range": "25-45",
-    "occupation": "Working professional",
-    "context": "Seeking mental wellness and meditation tools",
+    "persona_id": 1,
+    "name": "Alex Chen",
+    "age_range": "25-44",
+    "occupation": "Working Professional",
+    "context": "Uses meditation and relaxation apps to manage stress",
     "goals": [
-      "Find a calm and effective meditation app",
-      "Improve mental health"
+      "Reduce stress and anxiety",
+      "Improve mental well-being"
     ],
     "pain_points": [
-      "Difficult navigation",
-      "Aggressive subscription model",
-      "Poor customer support"
+      "Frustrated with apps that don't deliver on promises",
+      "Worried about being charged for subpar services",
+      "Difficulty navigating apps"
     ],
     "tech_comfort": "Moderate",
-    "quote": "I just want to focus on my meditation, not get caught up in a money-grabbing app!",
-    "group_theme": "Frustration with monetization and usability"
+    "quote": "I just want something that works and helps me relax, without breaking the bank",
+    "group_theme": "Skeptical of paid services, values effectiveness and ease of use"
   },
   {
     "persona_id": "A2-001",
-    "name": "Nneoma",
-    "age_range": "25-44",
-    "occupation": "Working Professional",
-    "context": "Busy professional with family responsibilities",
-    "goals": [
-      "Save money on household expenses",
-      "Streamline shopping experience"
-    ],
-    "pain_points": [
-      "Difficulty navigating apps",
-      "Frustration with non-functional links"
-    ],
-    "tech_comfort": "Moderate",
-    "quote": "Deep breath essential",
-    "group_theme": "Frustrated Shoppers"
-  },
-  {
-    "persona_id": "A4-1",
-    "name": "Serenity",
+    "name": "Emily W.",
     "age_range": "25-45",
-    "occupation": "Creative Professional",
-    "context": "High stress levels, seeking relaxation and sleep improvement",
+    "occupation": "Working professional",
+    "context": "Seeking relaxation and stress relief through meditation and mindfulness",
     "goals": [
+      "Reduce stress and anxiety",
       "Improve sleep quality",
-      "Reduce stress and anxiety"
+      "Increase focus and calmness"
     ],
     "pain_points": [
-      "Difficulties with app navigation",
-      "Interruptions during sessions",
-      "Splash screen dismissal"
+      "Limited free content",
+      "Obligation to create account for full access",
+      "Expensive premium features"
     ],
-    "tech_comfort": "Intermediate",
-    "quote": "I just love how Mr. McConaughey's voice makes me drift off to sleep... it's like my own personal lullaby",
-    "group_theme": "Relaxation and Sleep"
+    "tech_comfort": "High",
+    "quote": "I was skeptical at first, but this app has really helped me take my mind off all the thoughts racing through my head and get some rest.",
+    "group_theme": "Relaxation and Stress Relief"
   },
   {
-    "persona_id": "A3-001",
-    "name": "Frustrated Fiona",
-    "age_range": "25-44",
-    "occupation": "Working Professional",
-    "context": "Fiona is a busy professional who values convenience and affordability. She is active on social media and enjoys watching videos on YouTube.",
-    "goals": [
-      "Find affordable and useful apps",
-      "Avoid unnecessary expenses"
-    ],
-    "pain_points": [
-      "Hidden costs",
-      "Long onboarding processes",
-      "Useless features",
-      "Difficulty canceling subscriptions"
-    ],
-    "tech_comfort": "Moderate",
-    "quote": "I'm extremely frustrated with apps that promise the world but end up charging me for nothing.",
-    "group_theme": "Frustration with Hidden Costs and Poor Value"
+    "persona_id": "ap3",
+    "name": "user3"
+  },
+  {
+    "persona_id": "ap4",
+    "name": "user4"
   },
   {
     "persona_id": "A1-001",
-    "name": "Emily Thompson",
+    "name": "Emily Wilson",
     "age_range": "25-45",
-    "occupation": "Working Professional",
-    "context": "Struggles with stress, anxiety, and sleep deprivation",
+    "occupation": "Marketing Manager",
+    "context": "Struggling with stress and sleep deprivation due to a demanding work schedule",
     "goals": [
-      "Improve sleep quality",
       "Reduce stress and anxiety",
-      "Establish a consistent morning routine"
+      "Improve sleep quality",
+      "Increase productivity"
     ],
     "pain_points": [
-      "Difficulty falling asleep due to racing thoughts",
-      "Waking up in the middle of the night",
-      "Feeling anxious before bedtime"
+      "Difficulty falling asleep",
+      "Stress and anxiety during work hours",
+      "Limited time for self-care"
     ],
-    "tech_comfort": "Highly tech-savvy, comfortable with mobile apps and subscriptions",
-    "quote": "This app has been a total gamechanger for my mental health and sleep story.",
-    "group_theme": "Stress Relief and Sleep Improvement"
+    "tech_comfort": "High",
+    "quote": "I just wish I could fall asleep as soon as my head hits the pillow, without all those racing thoughts.",
+    "group_theme": "Stress Relief and Sleep"
   }
 ]

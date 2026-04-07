@@ -5,8 +5,8 @@
   "requirements_count": 12,
   "tests_count": 24,
   "traceability_links": 12,
-  "review_coverage": 0.8667,
+  "review_coverage": 0.8133,
   "traceability_ratio": 1.0,
   "testability_rate": 1.0,
-  "ambiguity_ratio": 0.5
+  "ambiguity_ratio": 0.083
 }

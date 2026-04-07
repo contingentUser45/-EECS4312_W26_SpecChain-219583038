@@ -13,10 +13,8 @@ env = os.path.join(root, ".env")
 
 print("Checking for GROQ_API_KEY...")
 
-# check env first
 key = os.environ.get("GROQ_API_KEY")
 
-# check .env file
 if not key and os.path.exists(env):
     print("   Checking .env file...")
     lines = [l.strip() for l in open(env, encoding="utf-8") if l.strip()]
@@ -28,7 +26,6 @@ if not key and os.path.exists(env):
         if not key:
             key = lines[1]
 
-# ask user if needed
 if not key:
     print("\nGROQ_API_KEY not found.")
     print("   Use: export GROQ_API_KEY=\"your_key_here\"")
@@ -43,9 +40,9 @@ else:
 os.environ["GROQ_API_KEY"] = key
 
 sys_prompt = (
-    "Generate a functional requirement strictly following the required template.\n"
+    "Generate unique functional requirements for Calm, a meditation and sleep app on Google Play, strictly following the required template.\n"
     "Use ONLY precise, measurable, and testable language.\n"
-    "DO NOT use ANY vague or ambiguous terms such as: fast, quick, efficient, user-friendly, robust, scalable, reliable, easy, intuitive. or the requirement is kaput\n"
+    "DO NOT use ANY vague or ambiguous terms such as: fast, quick, rapid, efficient, optimized, user friendly, easy, simple, intuitive, seamless, smooth, effortless, robust, scalable, reliable, stable, secure, safe, clear, clearly, understandable, obvious, transparent, relevant, accurate, appropriate, effective, useful, meaningful, high quality, good, better, best, improved, enhanced, minimal, sufficient, adequate, acceptable, reasonable, responsive, performant, low latency, real-time, accessible, available, consistent, flexible, adaptable, quickly, easily, properly, correctly, smoothly, significant, substantial, large, small, minor, frequent, often, rare, occasionally, short, long, near, far, as needed, where possible, if applicable, as appropriate, and/or, etc, various, multiple, several, optimized, streamlined, dynamic, powerful. or the requirement is kaput\n"
     "Every requirement must include a measurable condition (e.g., time, percentage, limit, or specific behavior).\n"
     "Bad example: 'system should be fast'\n"
     "Good example: 'system shall respond within 2 seconds for 95% of requests'\n"
@@ -90,18 +87,35 @@ def generate_requirement(client, persona, group, idx):
             temperature=0.3,
             response_format={"type": "json_object"}
         )
-        data = json.loads(res.choices[0].message.content)
-    except:
+
+        content = res.choices[0].message.content.strip()
+        parsed = json.loads(content)
+
+        if isinstance(parsed, list):
+            if len(parsed) == 0:
+                raise ValueError("Empty list returned")
+            data = parsed[0]
+        elif isinstance(parsed, dict):
+            data = parsed
+        else:
+            raise ValueError(f"Unexpected type: {type(parsed)}")
+
+    except Exception:
         data = {
             "requirement_id": f"FR_auto_{idx}",
-            "description": "The system shall operate reliably.",
+            "description": "The system shall operate without failure under normal usage conditions.",
             "source_persona": persona.get("name", f"User{idx}"),
             "traceability": f"Derived from review group {gid}",
-            "acceptance_criteria": "Given normal usage, When the system is used, Then it must function without failure."
+            "acceptance_criteria": "Given normal usage conditions, When the user interacts with the feature, Then the system responds within 3 seconds for at least 95% of interactions."
         }
 
     data["requirement_id"] = f"FR_auto_{idx}"
     data["traceability"] = f"Derived from review group {gid}"
+
+    data.setdefault("description", "The system shall ...")
+    data.setdefault("source_persona", persona.get("name", f"User{idx}"))
+    data.setdefault("acceptance_criteria", "Given ..., When ..., Then ...")
+
     return data, user_prompt
 
 
@@ -177,7 +191,6 @@ def run():
         eta = avg * (total - req_counter)
         print(f"Generated 2 requirements for persona {i} | ETA: {eta:.1f}s")
 
-    # save markdown
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
         f.write("\n".join(specs))

@@ -8,14 +8,12 @@ output_path = os.path.join(root, "tests", "tests_auto.json")
 prompt_path = os.path.join(root, "prompts", "prompt_auto.json")
 
 model_id = "meta-llama/llama-4-scout-17b-16e-instruct"
+
 env = os.path.join(root, ".env")
 
 print("Checking for GROQ_API_KEY...")
-
-# check env first
 key = os.environ.get("GROQ_API_KEY")
 
-# check .env file
 if not key and os.path.exists(env):
     print("   Checking .env file...")
     lines = [l.strip() for l in open(env, encoding="utf-8") if l.strip()]
@@ -27,7 +25,6 @@ if not key and os.path.exists(env):
         if not key:
             key = lines[1]
 
-# ask user if needed
 if not key:
     print("\nGROQ_API_KEY not found.")
     print("   Use: export GROQ_API_KEY=\"your_key_here\"")
@@ -42,22 +39,35 @@ else:
 os.environ["GROQ_API_KEY"] = key
 
 sys_prompt = (
-    "generate a validation test scenario.\n"
+    "You are working on Calm, a meditation and sleep mobile app.\n"
+    "generate 2 validation test scenarios.\n"
     "ensure:\n"
     "- steps are clear and workable\n"
     "- expected result directly validates the requirement\n"
     "- output is valid json\n"
+    "Return a JSON object with a 'test_scenarios' key containing an array of exactly 2 test objects.\n"
 )
 
 commands = (
     "requirement:\n{req}\n\n"
-    "generate one test scenario in this using this format:\n\n"
+    "generate two test scenarios using this format:\n\n"
     '{{'
-    '"test_id": "T_auto_x",'
+    '"test_scenarios": ['
+    '{{'
+    '"test_id": "T_auto_xa",'
     '"requirement_id": "fr_auto_x",'
     '"scenario": "short description of validation",'
     '"steps": ["step 1", "step 2", "step 3"],'
     '"expected_result": "specific measurable outcome"'
+    '}},'
+    '{{'
+    '"test_id": "T_auto_xb",'
+    '"requirement_id": "fr_auto_x",'
+    '"scenario": "short description of validation",'
+    '"steps": ["step 1", "step 2", "step 3"],'
+    '"expected_result": "specific measurable outcome"'
+    '}}'
+    ']'
     '}}'
 )
 
@@ -86,9 +96,9 @@ def is_valid_test(test):
     return True
 
 
-def fallback_test(req, idx):
+def fallback_test(req, idx, suffix="a"):
     return {
-        "test_id": f"T_auto_{idx}",
+        "test_id": f"T_auto_{idx}{suffix}",
         "requirement_id": req["requirement_id"],
         "scenario": f"validate {req['description']}",
         "steps": [
@@ -102,6 +112,8 @@ def fallback_test(req, idx):
 
 def generate_test(client, req, idx):
     prompt = commands.format(req=json.dumps(req, indent=2))
+    raw_content = "error"
+
     try:
         res = client.chat.completions.create(
             model=model_id,
@@ -112,16 +124,49 @@ def generate_test(client, req, idx):
             temperature=0.2,
             response_format={"type": "json_object"}
         )
-        data = json.loads(res.choices[0].message.content)
-        if not is_valid_test(data):
+
+        raw_content = res.choices[0].message.content
+        parsed = json.loads(raw_content)
+
+        if isinstance(parsed, list):
+            test_list = parsed
+        elif isinstance(parsed, dict):
+            if "test_scenarios" in parsed and isinstance(parsed["test_scenarios"], list):
+                test_list = parsed["test_scenarios"]
+            elif "tests" in parsed and isinstance(parsed["tests"], list):
+                test_list = parsed["tests"]
+            else:
+                test_list = [parsed]
+        else:
             raise ValueError("invalid structure")
+
+        results = []
+        suffixes = ["a", "b"]
+        for j in range(2):
+            if j < len(test_list):
+                data = test_list[j]
+                if not isinstance(data, dict):
+                    data = fallback_test(req, idx, suffixes[j])
+            else:
+                data = fallback_test(req, idx, suffixes[j])
+
+            data["test_id"] = f"T_auto_{idx}{suffixes[j]}"
+            data["requirement_id"] = req["requirement_id"]
+
+            if not is_valid_test(data):
+                data = fallback_test(req, idx, suffixes[j])
+                data["test_id"] = f"T_auto_{idx}{suffixes[j]}"
+                data["requirement_id"] = req["requirement_id"]
+
+            results.append(data)
+
+        return results, prompt, raw_content
+
     except Exception as e:
         print(f"something went wrong for {req['requirement_id']}, using backup")
-        data = fallback_test(req, idx)
-
-    data["test_id"] = f"T_auto_{idx}"
-    data["requirement_id"] = req["requirement_id"]
-    return data, prompt, str(res.choices[0].message.content) if 'res' in locals() else "error"
+        t1 = fallback_test(req, idx, "a")
+        t2 = fallback_test(req, idx, "b")
+        return [t1, t2], prompt, raw_content
 
 
 def save_tests(path, data):
@@ -141,7 +186,7 @@ def save_prompt_logs(path, data):
                 existing = []
         except:
             print("failed to load existing prompt logs")
-            return
+            existing = []
     else:
         existing = []
 
@@ -181,10 +226,11 @@ def run():
     start_time = time.time()
 
     for i, req in enumerate(requirements, 1):
-        test, prompt, response = generate_test(client, req, i)
-        tests.append(test)
+        test_pair, prompt, response = generate_test(client, req, i)
+        tests.extend(test_pair)
+
         prompt_logs.append({
-            "test_id": f"T_auto_{i}",
+            "test_id": f"T_auto_{i}a/b",
             "requirement_id": req["requirement_id"],
             "system_prompt": sys_prompt,
             "user_prompt": prompt,
@@ -195,9 +241,10 @@ def run():
         elapsed = time.time() - start_time
         avg = elapsed / i
         eta = avg * (len(requirements) - i)
-        print(f"T_auto_{i} generated | ETA: {eta:.1f}s")
+        print(f"T_auto_{i}a + T_auto_{i}b generated | ETA: {eta:.1f}s")
 
-    # final checks and save
+    print(f"\nTotal tests generated: {len(tests)} (expected {len(requirements) * 2})")
+
     save_tests(output_path, tests)
     save_prompt_logs(prompt_path, prompt_logs)
 

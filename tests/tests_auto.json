@@ -1,135 +1,224 @@
 {
   "tests": [
     {
-      "test_id": "T_auto_1",
+      "test_id": "T_auto_1a",
       "requirement_id": "FR_auto_1",
-      "scenario": "Launch app and access guided meditation session without login or subscription within 30 seconds",
+      "scenario": "validate The system shall operate without failure under normal usage conditions.",
       "steps": [
-        "Launch the meditation app",
-        "Verify the app's main screen is displayed",
-        "Select the option to start a guided meditation session",
-        "Verify the guided meditation session starts within 30 seconds"
+        "initialize system",
+        "execute function related to: The system shall operate without failure under normal usage conditions.",
+        "capture system response"
       ],
-      "expected_result": "The guided meditation session begins playing within 30 seconds of launching the app, without prompting for login or subscription"
+      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
     },
     {
-      "test_id": "T_auto_2",
+      "test_id": "T_auto_1b",
+      "requirement_id": "FR_auto_1",
+      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "steps": [
+        "initialize system",
+        "execute function related to: The system shall operate without failure under normal usage conditions.",
+        "capture system response"
+      ],
+      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+    },
+    {
+      "test_id": "T_auto_2a",
       "requirement_id": "FR_auto_2",
-      "scenario": "Validate guided meditation session accessibility from home screen",
+      "scenario": "validate The app shall provide a free trial period of at least 7 days for new users to test its features before being charged.",
       "steps": [
-        "Navigate to the home screen",
-        "Access the meditation sessions menu",
-        "Select a guided meditation session"
+        "initialize system",
+        "execute function related to: The app shall provide a free trial period of at least 7 days for new users to test its features before being charged.",
+        "capture system response"
       ],
-      "expected_result": "The guided meditation session starts playing within 3 navigation steps"
+      "expected_result": "system satisfies requirement: The app shall provide a free trial period of at least 7 days for new users to test its features before being charged."
     },
     {
-      "test_id": "T_auto_3",
+      "test_id": "T_auto_2b",
+      "requirement_id": "FR_auto_2",
+      "scenario": "validate The app shall provide a free trial period of at least 7 days for new users to test its features before being charged.",
+      "steps": [
+        "initialize system",
+        "execute function related to: The app shall provide a free trial period of at least 7 days for new users to test its features before being charged.",
+        "capture system response"
+      ],
+      "expected_result": "system satisfies requirement: The app shall provide a free trial period of at least 7 days for new users to test its features before being charged."
+    },
+    {
+      "test_id": "T_auto_3a",
       "requirement_id": "FR_auto_3",
-      "scenario": "Validate navigation menu accessibility within 3 clicks",
+      "scenario": "validate The system shall operate without failure under normal usage conditions.",
       "steps": [
-        "Log in to the system",
-        "Access the main navigation menu",
-        "Navigate to a main feature (e.g., user management) in 3 clicks or less"
+        "initialize system",
+        "execute function related to: The system shall operate without failure under normal usage conditions.",
+        "capture system response"
       ],
-      "expected_result": "The main feature (e.g., user management) is displayed and accessible within 3 clicks from the main navigation menu"
+      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
     },
     {
-      "test_id": "T_auto_4",
+      "test_id": "T_auto_3b",
+      "requirement_id": "FR_auto_3",
+      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "steps": [
+        "initialize system",
+        "execute function related to: The system shall operate without failure under normal usage conditions.",
+        "capture system response"
+      ],
+      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+    },
+    {
+      "test_id": "T_auto_4a",
       "requirement_id": "FR_auto_4",
-      "scenario": "Validate navigation to shopping cart within 3 clicks from any product page",
+      "scenario": "validate The system shall operate without failure under normal usage conditions.",
       "steps": [
-        "Navigate to a product page",
-        "Click on a product to view details",
-        "Click on the 'Add to Cart' button",
-        "Click on the 'View Cart' button"
+        "initialize system",
+        "execute function related to: The system shall operate without failure under normal usage conditions.",
+        "capture system response"
       ],
-      "expected_result": "The system navigates to the shopping cart page and displays the added product"
+      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
     },
     {
-      "test_id": "T_auto_5",
+      "test_id": "T_auto_4b",
+      "requirement_id": "FR_auto_4",
+      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "steps": [
+        "initialize system",
+        "execute function related to: The system shall operate without failure under normal usage conditions.",
+        "capture system response"
+      ],
+      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+    },
+    {
+      "test_id": "T_auto_5a",
       "requirement_id": "FR_auto_5",
-      "scenario": "Validate uninterrupted relaxation sessions for users",
+      "scenario": "validate The system shall operate without failure under normal usage conditions.",
       "steps": [
-        "Simulate 100 user sessions with relaxation mode enabled",
-        "Introduce random interruptions (max 2 per session) with duration (max 30 seconds) during the sessions for 15 users",
-        "Measure the number of uninterrupted sessions and interruptions per session for the remaining 85 users"
+        "initialize system",
+        "execute function related to: The system shall operate without failure under normal usage conditions.",
+        "capture system response"
       ],
-      "expected_result": {
-        "uninterrupted_sessions_percentage": 85,
-        "max_interruptions_per_session": 2,
-        "max_interruption_duration": 30
-      }
+      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
     },
     {
-      "test_id": "T_auto_6",
+      "test_id": "T_auto_5b",
+      "requirement_id": "FR_auto_5",
+      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "steps": [
+        "initialize system",
+        "execute function related to: The system shall operate without failure under normal usage conditions.",
+        "capture system response"
+      ],
+      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+    },
+    {
+      "test_id": "T_auto_6a",
       "requirement_id": "FR_auto_6",
-      "scenario": "Validate uninterrupted relaxation session for 30 minutes",
+      "scenario": "validate The system shall operate without failure under normal usage conditions.",
       "steps": [
-        "Start a relaxation session",
-        "Wait for 30 minutes without any interactions",
-        "Verify no unexpected interruptions or alerts occur during the session"
+        "initialize system",
+        "execute function related to: The system shall operate without failure under normal usage conditions.",
+        "capture system response"
       ],
-      "expected_result": "The relaxation session completes without any interruptions or alerts for the full 30 minutes"
+      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
     },
     {
-      "test_id": "T_auto_7",
+      "test_id": "T_auto_6b",
+      "requirement_id": "FR_auto_6",
+      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "steps": [
+        "initialize system",
+        "execute function related to: The system shall operate without failure under normal usage conditions.",
+        "capture system response"
+      ],
+      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+    },
+    {
+      "test_id": "T_auto_7a",
       "requirement_id": "FR_auto_7",
-      "scenario": "Validate upfront display of all costs associated with a subscription",
+      "scenario": "validate The system shall operate without failure under normal usage conditions.",
       "steps": [
-        "Navigate to the subscription purchase page",
-        "Select a subscription plan",
-        "Review the displayed costs and breakdown of charges"
+        "initialize system",
+        "execute function related to: The system shall operate without failure under normal usage conditions.",
+        "capture system response"
       ],
-      "expected_result": "The system displays a clear and detailed breakdown of all costs associated with the subscription, including no hidden fees, in a transparent and easily understandable format."
+      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
     },
     {
-      "test_id": "T_auto_8",
+      "test_id": "T_auto_7b",
+      "requirement_id": "FR_auto_7",
+      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "steps": [
+        "initialize system",
+        "execute function related to: The system shall operate without failure under normal usage conditions.",
+        "capture system response"
+      ],
+      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+    },
+    {
+      "test_id": "T_auto_8a",
       "requirement_id": "FR_auto_8",
-      "scenario": "Validate clear display of subscription costs during onboarding",
+      "scenario": "validate The system shall operate without failure under normal usage conditions.",
       "steps": [
-        "Initiate the onboarding process for a new subscription",
-        "Select a subscription plan and proceed to the payment details page",
-        "Review the costs and fees associated with the subscription"
+        "initialize system",
+        "execute function related to: The system shall operate without failure under normal usage conditions.",
+        "capture system response"
       ],
-      "expected_result": "The system displays a detailed breakdown of all costs, including any potential hidden fees, in a clear and readable format."
+      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
     },
     {
-      "test_id": "T_auto_9",
+      "test_id": "T_auto_8b",
+      "requirement_id": "FR_auto_8",
+      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "steps": [
+        "initialize system",
+        "execute function related to: The system shall operate without failure under normal usage conditions.",
+        "capture system response"
+      ],
+      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+    },
+    {
+      "test_id": "T_auto_9a",
       "requirement_id": "FR_auto_9",
-      "scenario": "Validate guided relaxation session helps users fall asleep within 20 minutes",
+      "scenario": "validate The system shall operate without failure under normal usage conditions.",
       "steps": [
-        "Start a new guided relaxation session",
-        "Begin timer to track session duration",
-        "Follow the guided relaxation session instructions",
-        "Indicate when the user falls asleep (e.g., via a 'fallen asleep' button)"
+        "initialize system",
+        "execute function related to: The system shall operate without failure under normal usage conditions.",
+        "capture system response"
       ],
-      "expected_result": "The user falls asleep within 20 minutes of starting the session, and the system records the session duration as less than or equal to 20 minutes."
+      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
     },
     {
-      "test_id": "T_auto_10",
-      "requirement_id": "FR_auto_10",
-      "scenario": "Validation of guided relaxation session effectiveness",
+      "test_id": "T_auto_9b",
+      "requirement_id": "FR_auto_9",
+      "scenario": "validate The system shall operate without failure under normal usage conditions.",
       "steps": [
-        "User starts a guided relaxation session",
-        "User uses the session at least 3 times a week for a period of 2 weeks",
-        "Track and record the number of sessions where user falls asleep within 30 minutes",
-        "Calculate the success rate of falling asleep within 30 minutes"
+        "initialize system",
+        "execute function related to: The system shall operate without failure under normal usage conditions.",
+        "capture system response"
       ],
-      "expected_result": {
-        "success_rate": {
-          "value": 80,
-          "unit": "%"
-        },
-        "sessions": {
-          "min_sessions_per_week": 3,
-          "total_weeks": 2
-        },
-        "output": {
-          "success": true,
-          "message": "The system provides a guided relaxation session with an 80% success rate of users falling asleep within 30 minutes"
-        }
-      }
+      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+    },
+    {
+      "test_id": "T_auto_10a",
+      "requirement_id": "FR_auto_10",
+      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "steps": [
+        "initialize system",
+        "execute function related to: The system shall operate without failure under normal usage conditions.",
+        "capture system response"
+      ],
+      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
+    },
+    {
+      "test_id": "T_auto_10b",
+      "requirement_id": "FR_auto_10",
+      "scenario": "validate The system shall operate without failure under normal usage conditions.",
+      "steps": [
+        "initialize system",
+        "execute function related to: The system shall operate without failure under normal usage conditions.",
+        "capture system response"
+      ],
+      "expected_result": "system satisfies requirement: The system shall operate without failure under normal usage conditions."
     }
   ]
 }
